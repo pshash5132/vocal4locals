@@ -1,0 +1,5 @@
+@extends('admin.layouts.main')
+@section('content')
+@include('flashmessage')
+@include('admin.'.$page)
+@endsection('content')
