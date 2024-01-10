@@ -77,11 +77,27 @@ class AboutController extends Controller
         $request->validate([
             'title' => ['required', 'string', 'max:200'],
             'containt' => ['required', 'string'],
+            'about_title1' => ['required', 'string'],
+            'about1' => ['required', 'string'],
+            'about_title2' => ['required', 'string'],
+            'about2' => ['required', 'string'],
+            'about_title3' => ['required', 'string'],
+            'about3' => ['required', 'string'],
+            'about_title4' => ['required', 'string'],
+            'about4' => ['required', 'string'],
 
         ]);
         $update = About::findOrFail($id);
         $update->title = $request->title;
         $update->containt = $request->containt;
+        $update->about_title1 = $request->about_title1;
+        $update->about1 = $request->about1;
+        $update->about_title2 = $request->about_title2;
+        $update->about2 = $request->about2;
+        $update->about_title3 = $request->about_title3;
+        $update->about3 = $request->about3;
+        $update->about_title4 = $request->about_title4;
+        $update->about4 = $request->about4;
         $update->save();
         toastr('Updated successfully!');
         return redirect()->back();

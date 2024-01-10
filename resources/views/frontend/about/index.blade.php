@@ -21,44 +21,44 @@
                     <div class="our-story-lists-wrap">
                         <div class="our-story-lists-img">
                             <div class="our-story-lists-inner">
-                                <img src="{{asset('frontend/assets/images/icon1.svg')}}" alt="Sallers active our site" />
+                                <img src="{{asset('frontend/assets/images/icon1.svg')}}" alt="{!!$about->about_title1!!}" />
                             </div>
                         </div>
-                        <h2>15.2k</h2>
-                        <p>Sallers active our site</p>
+                        <h2> {!!$about->about1!!}</h2>
+                        <p>{!!$about->about_title1!!}</p>
                     </div>
                 </div>
                 <div class="col-lg-3">
                     <div class="our-story-lists-wrap">
                         <div class="our-story-lists-img">
                             <div class="our-story-lists-inner">
-                                <img src="{{asset('frontend/assets/images/icon1.svg')}}" alt="Sallers active our site" />
+                                <img src="{{asset('frontend/assets/images/icon1.svg')}}" alt="{!!$about->about_title2!!}" />
                             </div>
                         </div>
-                        <h2>15.2k</h2>
-                        <p>Sallers active our site</p>
+                        <h2> {!!$about->about2!!}</h2>
+                        <p>{!!$about->about_title2!!}</p>
                     </div>
                 </div>
                 <div class="col-lg-3">
                     <div class="our-story-lists-wrap">
                         <div class="our-story-lists-img">
                             <div class="our-story-lists-inner">
-                                <img src="{{asset('frontend/assets/images/icon1.svg')}}" alt="Sallers active our site" />
+                                <img src="{{asset('frontend/assets/images/icon1.svg')}}" alt="{!!$about->about_title3!!}" />
                             </div>
                         </div>
-                        <h2>15.2k</h2>
-                        <p>Sallers active our site</p>
+                        <h2> {!!$about->about3!!}</h2>
+                        <p>{!!$about->about_title3!!}</p>
                     </div>
                 </div>
                 <div class="col-lg-3">
                     <div class="our-story-lists-wrap">
                         <div class="our-story-lists-img">
                             <div class="our-story-lists-inner">
-                                <img src="{{asset('frontend/assets/images/icon1.svg')}}" alt="Sallers active our site" />
+                                <img src="{{asset('frontend/assets/images/icon1.svg')}}" alt="{!!$about->about_title4!!}" />
                             </div>
                         </div>
-                        <h2>15.2k</h2>
-                        <p>Sallers active our site</p>
+                        <h2> {!!$about->about4!!}</h2>
+                        <p>{!!$about->about_title4!!}</p>
                     </div>
                 </div>
             </div>

@@ -19,17 +19,46 @@
                             @csrf
                             @method('PUT')
 
-
-                            <div class="form-group">
-                                <label>Title</label>
-                                <input name="title"  value="{{$about->title}}" type="text" class="form-control">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Title</label>
+                                        <input name="title"  value="{{$about->title}}" type="text" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Content</label>
+                                        <textarea name="containt" class="form-control summernote">{{$about->containt}}</textarea>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="form-group">
-                                <label>Content</label>
-                                <textarea name="containt" class="form-control summernote">{{$about->containt}}</textarea>
-                            </div>
 
-                            <button type="submit" class="btn btn-primary"> Update </button>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <label>About Footer 1</label>
+                                    <input type="text" name="about_title1" class="form-control" placeholder="Sallers active our site"/>
+                                    <input type="text" name="about1" class="form-control" placeholder="25"/>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>About Footer 2</label>
+                                    <input type="text" name="about_title2" class="form-control" placeholder="Sallers active our site"/>
+                                    <input type="text" name="about2" class="form-control" placeholder="25"/>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>About Footer 3</label>
+                                    <input type="text" name="about_title3" class="form-control" placeholder="Sallers active our site"/>
+                                    <input type="text" name="about3" class="form-control" placeholder="25"/>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>About Footer 4</label>
+                                    <input type="text" name="about_title4" class="form-control" placeholder="Sallers active our site"/>
+                                    <input type="text" name="about4" class="form-control" placeholder="25"/>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <button type="submit" class="btn btn-primary"> Update </button>
+                            </div>
                         </form>
                     </div>
 

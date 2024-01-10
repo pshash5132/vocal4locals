@@ -145,11 +145,11 @@ class ProductController extends Controller
         $this->deleteImage($product->thumb_image);
         $variants = ProductVariant::where('product_id', $id)->get();
         foreach ($variants as $value) {
-            $value->productVariantItems()->delete();
+            // $value->productVariantItems()->delete();
             $value->delete();
         }
         $product->delete();
-        return response(['status' => '1', 'message' => 'deleted successfully']);
+        return response(['status' => '1', 'message' => 'Deleted successfully']);
     }
     //get all product subcategories
 
