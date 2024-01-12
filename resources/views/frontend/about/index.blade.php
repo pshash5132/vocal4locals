@@ -16,12 +16,12 @@
                         <div class="col-lg-6 col-md-6">
                             <div class="our-story-wrap">
                                 <h1>{!!$about->title!!}</h1>
-
+                                {!!$about->containt!!}
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6">
                             <div class="our-story-img-wrap">
-                                <img src="{{asset('frontend')}}/assets/images/our-story-1.svg" alt="" />
+                                <img src="{{asset('frontend')}}/assets/images/our-story.svg" alt="" />
                             </div>
                         </div>
                     </div>
