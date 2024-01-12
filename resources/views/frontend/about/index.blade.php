@@ -16,7 +16,7 @@
                         <div class="col-lg-6 col-md-6">
                             <div class="our-story-wrap">
                                 <h1>{!!$about->title!!}</h1>
-                                {!!$about->containt!!}
+
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6">
