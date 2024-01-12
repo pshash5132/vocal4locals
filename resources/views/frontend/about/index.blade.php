@@ -10,12 +10,24 @@
                         </ol>
                     </nav>
                 </div>
-                <div class="col-lg-12">
-                    <div class="our-story-wrap">
-                        <h1>{!!$about->title!!}</h1>
-                        {!!$about->containt!!}
+
+                <div class="banner-wrapper-wrap">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6 col-md-6">
+                            <div class="our-story-wrap">
+                                <h1>{!!$about->title!!}</h1>
+                                {!!$about->containt!!}
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6">
+                            <div class="our-story-img-wrap">
+                                <img src="{{asset('frontend')}}/assets/images/our-story-1.svg" alt="" />
+                            </div>
+                        </div>
                     </div>
                 </div>
+
+
 
                 <div class="col-lg-3">
                     <div class="our-story-lists-wrap">

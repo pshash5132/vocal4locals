@@ -7,7 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Vendor;
 use App\Traits\ImageUploadTrait;
 use Illuminate\Http\Request;
-
+use Auth;
 class AdminVendorProfileController extends Controller
 {
     /**
@@ -64,6 +64,7 @@ class AdminVendorProfileController extends Controller
         $insert->tw_link = $request->tw_link;
         $insert->insta_link = $request->insta_link;
         $insert->status = $request->status;
+        $insert->user_id = Auth::user()->id;
         $insert->save();
         toastr('Created successfully', 'success');
         return redirect()->route('admin.' . $this->folder . '.index');

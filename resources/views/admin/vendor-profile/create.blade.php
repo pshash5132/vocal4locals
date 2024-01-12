@@ -33,7 +33,7 @@
                             </div>
                             <div class="form-group">
                                 <label>Phone</label>
-                                <input name="text"  value="{{old('text')}}" type="phone" class="form-control">
+                                <input name="phone"  value="{{old('text')}}" type="text" class="form-control">
                             </div>
 
                             <div class="form-group">
