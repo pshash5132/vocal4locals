@@ -8,10 +8,18 @@
                 <div class="banner-slider-wrap text-center">
                     <img src="{{$slider->banner}}" alt="Banne" />
                     <div class="banner-slider-content">
+                        @if ($slider->type!='')
                         <h2>{!!$slider->type!!} </h2>
+                        @endif
+                        @if ($slider->title!='')
                         <h3>{!!$slider->title!!}</h3>
+                        @endif
+                        @if ($slider->starting_price!='')
                         <p>{!!$slider->starting_price!!}</p>
+                        @endif
+                        @if ($slider->btn_url!='')
                         <a href="{{$slider->btn_url}}" class="cmn-btn buy-now">Buy Now!</a>
+                        @endif
                     </div>
                 </div>
             </div>

@@ -41,12 +41,12 @@ class SliderController extends Controller
 
         $request->validate([
             'banner' => ['required', 'image', 'max:2000'],
-            'type' => ['string', 'max:200'],
-            'title' => ['required', 'string', 'max:200'],
-            'starting_price' => ['max:200'],
-            'btn_url' => ['url'],
-            'serial' => ['required', 'integer'],
-            'status' => ['required'],
+            // 'type' => ['string', 'max:200'],
+            // 'title' => ['required', 'string', 'max:200'],
+            // 'starting_price' => ['max:200'],
+            // 'btn_url' => ['url'],
+            // 'serial' => ['required', 'integer'],
+            // 'status' => ['required'],
         ]);
         $slider = new Slider();
         // handle file upload
@@ -89,12 +89,12 @@ class SliderController extends Controller
     {
         $request->validate([
             'banner' => ['nullable', 'image', 'max:2000'],
-            'type' => ['string', 'max:200'],
-            'title' => ['required', 'string', 'max:200'],
-            'starting_price' => ['max:200'],
-            'btn_url' => ['url'],
-            'serial' => ['required', 'integer'],
-            'status' => ['required'],
+            // 'type' => ['string', 'max:200'],
+            // 'title' => ['required', 'string', 'max:200'],
+            // 'starting_price' => ['max:200'],
+            // 'btn_url' => ['url'],
+            // 'serial' => ['required', 'integer'],
+            // 'status' => ['required'],
         ]);
         $slider = Slider::findOrFail($id);
         // handle file upload
