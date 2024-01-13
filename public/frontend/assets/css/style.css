@@ -828,6 +828,7 @@ header {
 .buy-now {
     max-width: 235px;
     margin-top: 10px;
+    padding: 13px 30px;
 }
 .buy-now:hover {
     background: #fff;
@@ -3643,6 +3644,7 @@ button:focus:not(:focus-visible) {
 /* buy-now-left */
 .banner-slider-wrap {
     position: relative;
+    height: 550px;
 }
 .banner-slider-wrap .banner-slider-content {
     position: absolute;
@@ -3689,6 +3691,10 @@ button:focus:not(:focus-visible) {
     color: #5264AE;
 }
 
+.banner-slider-wrap img {
+    height: 100%;
+    object-fit: cover;
+}
 
 .guest-room-select .btn-group > .dropdown-menu.show {
     width: 400px;
@@ -3788,6 +3794,9 @@ button:focus:not(:focus-visible) {
     font-family: var(--semibold);
     height: 100%;
 } */
+
+
+
 
 .dropdown-menu > li:hover {
     background-color: #fff;
@@ -4133,7 +4142,7 @@ button:focus:not(:focus-visible) {
 }
 .banner-wrapper-wrap {
     background: #d9dffc;
-    margin: 30px 0 50px;
+    margin: 30px 10px 50px;
 }
 .our-story-wrap {
     background: transparent;
