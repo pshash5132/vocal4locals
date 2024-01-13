@@ -24,7 +24,7 @@
                                 <img src="{{asset($slider->banner)}}" width="200" />
                             </div>
                             <div class="form-group">
-                                <label>Banner</label>
+                                <label>Banner (Max 2MB)</label>
                                 <input name="banner" type="file" class="form-control">
                             </div>
                             <div class="form-group">

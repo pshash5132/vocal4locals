@@ -37,23 +37,23 @@
                             <div class="row">
                                 <div class="col-md-3">
                                     <label>About Footer 1</label>
-                                    <input type="text" name="about_title1" class="form-control" placeholder="Sallers active our site"/>
-                                    <input type="text" name="about1" class="form-control" placeholder="25"/>
+                                    <input type="text" value="{{$about->about_title1}}" name="about_title1" class="form-control" placeholder="Sallers active our site"/>
+                                    <input type="text" value="{{$about->about1}}" name="about1" class="form-control" placeholder="25"/>
                                 </div>
                                 <div class="col-md-3">
                                     <label>About Footer 2</label>
-                                    <input type="text" name="about_title2" class="form-control" placeholder="Sallers active our site"/>
-                                    <input type="text" name="about2" class="form-control" placeholder="25"/>
+                                    <input type="text" value="{{$about->about_title2}}" name="about_title2" class="form-control" placeholder="Sallers active our site"/>
+                                    <input type="text" value="{{$about->about2}}" name="about2" class="form-control" placeholder="25"/>
                                 </div>
                                 <div class="col-md-3">
                                     <label>About Footer 3</label>
-                                    <input type="text" name="about_title3" class="form-control" placeholder="Sallers active our site"/>
-                                    <input type="text" name="about3" class="form-control" placeholder="25"/>
+                                    <input type="text" value="{{$about->about_title3}}" name="about_title3" class="form-control" placeholder="Sallers active our site"/>
+                                    <input type="text" value="{{$about->about3}}" name="about3" class="form-control" placeholder="25"/>
                                 </div>
                                 <div class="col-md-3">
                                     <label>About Footer 4</label>
-                                    <input type="text" name="about_title4" class="form-control" placeholder="Sallers active our site"/>
-                                    <input type="text" name="about4" class="form-control" placeholder="25"/>
+                                    <input type="text" value="{{$about->about_title4}}" name="about_title4" class="form-control" placeholder="Sallers active our site"/>
+                                    <input type="text" value="{{$about->about4}}" name="about4" class="form-control" placeholder="25"/>
                                 </div>
                             </div>
                             <div class="row">
