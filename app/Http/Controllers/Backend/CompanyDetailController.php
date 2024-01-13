@@ -46,10 +46,10 @@ class CompanyDetailController extends Controller
             'mobile' => ['required', 'string', 'max:20'],
             'website' => ['required', 'string', 'max:25'],
             'email' => ['required', 'string', 'max:25'],
-            'instagram' => ['required', 'string', 'max:35'],
-            'facebook' => ['required', 'string', 'max:35'],
-            'twitter' => ['required', 'string', 'max:35'],
-            'whatsapp' => ['required', 'string', 'max:35'],
+            'instagram' => ['required', 'string', 'max:100'],
+            'facebook' => ['required', 'string', 'max:100'],
+            'twitter' => ['required', 'string', 'max:100'],
+            'whatsapp' => ['required', 'string', 'max:100'],
         ]);
         $insert = new companyDetails();
         // handle file upload

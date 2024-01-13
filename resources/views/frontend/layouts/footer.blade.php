@@ -61,7 +61,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <p>Copyright © 2023 vocaal4local's</p>
+                    <p>Copyright © 2023 vocal4locals</p>
                     <div class="to-top"><img src="{{asset('frontend/assets/images/up-arrow.svg')}}" alt="Up Arrow" /></div>
                 </div>
             </div>
