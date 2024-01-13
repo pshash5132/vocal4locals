@@ -3291,7 +3291,7 @@ button:focus:not(:focus-visible) {
     margin-bottom: 50px;
 }
 .our-story-wrap h1 {
-    font-size: 40px;
+    font-size: 35px;
     color: #5264AE;
     font-weight: 700;
     padding-bottom: 20px;
@@ -4153,9 +4153,7 @@ button:focus:not(:focus-visible) {
     .latest-offers-slider {
         padding: 0 0 0 calc((101vw - 1140px) / 2);
     }
-    /* .our-story-wrap h1 {
-        font-size: 40px;
-    } */
+
     .order-tracking::before {
         width: 193px;
     }
@@ -4288,10 +4286,7 @@ button:focus:not(:focus-visible) {
     /* .search-category-wrap .dropdown-menu.show {
         transform: translate(0px, 48px) !important;
     } */
-    .our-story-wrap h1 {
-        font-size: 35px;
-        padding-bottom: 10px;
-    }
+   
     .our-story-lists-wrap {
         padding: 15px 15px 17px;
     }
