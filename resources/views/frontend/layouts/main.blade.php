@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="{{ asset('frontend/assets/css/animate.css') }}">
     <link rel="stylesheet" href="{{ asset('frontend/assets/css/owl.carousel.min.css') }}">
     <link rel="stylesheet" href="{{ asset('frontend/assets/css/owl.theme.default.css') }}">
-    <link rel="stylesheet" href="{{ asset('frontend/assets/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontend/assets/css/style.css?v=0.0.1') }}">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" >
     <meta name="csrf-token" content="{{ csrf_token() }}" />
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
