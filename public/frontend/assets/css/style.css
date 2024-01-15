@@ -3664,7 +3664,7 @@ button:focus:not(:focus-visible) {
     max-width: 610px;
     margin-bottom: 25px;
 }
-.home-banner .banner-slider-wrap::after {
+ .banner-slider-wrap::after {
     content: '';
     position:absolute;
     width: 100%;
@@ -5288,7 +5288,7 @@ button:focus:not(:focus-visible) {
         font-size: 20px;
         margin: 0;
     }
-    .home-banner .banner-slider-wrap {
+     .banner-slider-wrap {
         height: 350px;
     }
     .banner-slider-wrap img {
