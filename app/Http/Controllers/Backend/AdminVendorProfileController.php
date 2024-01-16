@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Backend;
 
 use App\DataTables\admin\VendorDataTable;
 use App\Http\Controllers\Controller;
+use App\Models\User;
 use App\Models\Vendor;
 use App\Traits\ImageUploadTrait;
 use Illuminate\Http\Request;
@@ -53,6 +54,16 @@ class AdminVendorProfileController extends Controller
             'status' => ['required'],
         ]);
         $imagePath = $this->uploadImage($request, 'banner', 'uploads/vendor');
+        $user = new User();
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->status = 'active';
+        $user->role = 'vendor';
+        $user->contact = $request->phone;
+        $user->password = bcrypt('123456');
+        $user->image = $imagePath;
+        $user->save();
+
         $insert = new Vendor();
         $insert->banner = $imagePath;
         $insert->name = $request->name;
@@ -64,9 +75,9 @@ class AdminVendorProfileController extends Controller
         $insert->tw_link = $request->tw_link;
         $insert->insta_link = $request->insta_link;
         $insert->status = $request->status;
-        $insert->user_id = Auth::user()->id;
+        $insert->user_id = $user->id;
         $insert->save();
-        toastr('Created successfully', 'success');
+        toastr('Vendor Created successfully', 'success');
         return redirect()->route('admin.' . $this->folder . '.index');
     }
 
