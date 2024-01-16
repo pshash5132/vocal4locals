@@ -25,38 +25,39 @@ use Illuminate\Support\Facades\Route;
 |
  */
 
-Route::get('/', [HomeController::class, 'index'])->name('home');
-Route::get('/services', [HomeController::class, 'index'])->name('services');
-Route::get('/service-detail/{slug}', [InquiryController::class, 'serviceDetail'])->name('service-detail');
-Route::get('/service-inquiry/{slug}', [InquiryController::class, 'serviceInquiry'])->name('service-inquiry');
-Route::get('/service-search', [InquiryController::class, 'search'])->name('service.search');
+Route::middleware('rolecheck')->group(function () {
+    Route::get('/', [HomeController::class, 'index'])->name('home');
+    Route::get('/services', [HomeController::class, 'index'])->name('services');
+    Route::get('/service-detail/{slug}', [InquiryController::class, 'serviceDetail'])->name('service-detail');
+    Route::get('/service-inquiry/{slug}', [InquiryController::class, 'serviceInquiry'])->name('service-inquiry');
+    Route::get('/service-search', [InquiryController::class, 'search'])->name('service.search');
 
-Route::post('/StoreServiceInquiry', [InquiryController::class, 'StoreServiceInquiry'])->name('StoreServiceInquiry');
-Route::get('/inquiry', [InquiryController::class, 'index'])->name('inquiry');
-Route::get('/about', [CommonController::class, 'about'])->name('about');
-Route::get('/contact', [CommonController::class, 'contact'])->name('contact');
-Route::post('/contact', [CommonController::class, 'contactAdd'])->name('contact.add');
-Route::get('/get-min-max-prices', [FrontProductDetailController::class, 'getMinMaxPrices'])->name('get-min-max-prices');
-Route::get('/get-products-by-price', [FrontProductDetailController::class, 'getProductsByPrice'])->name('get-products-by-price');
+    Route::post('/StoreServiceInquiry', [InquiryController::class, 'StoreServiceInquiry'])->name('StoreServiceInquiry');
+    Route::get('/inquiry', [InquiryController::class, 'index'])->name('inquiry');
+    Route::get('/about', [CommonController::class, 'about'])->name('about');
+    Route::get('/contact', [CommonController::class, 'contact'])->name('contact');
+    Route::post('/contact', [CommonController::class, 'contactAdd'])->name('contact.add');
+    Route::get('/get-min-max-prices', [FrontProductDetailController::class, 'getMinMaxPrices'])->name('get-min-max-prices');
+    Route::get('/get-products-by-price', [FrontProductDetailController::class, 'getProductsByPrice'])->name('get-products-by-price');
 
-Route::get('/product-list', [FrontProductDetailController::class, 'list'])->name('product-list');
-Route::get('/product-detail/{slug}', [FrontProductDetailController::class, 'showDetail'])->name('product-detail');
-Route::get('/product-search', [FrontProductDetailController::class, 'search'])->name('product.search');
+    Route::get('/product-list', [FrontProductDetailController::class, 'list'])->name('product-list');
+    Route::get('/product-detail/{slug}', [FrontProductDetailController::class, 'showDetail'])->name('product-detail');
+    Route::get('/product-search', [FrontProductDetailController::class, 'search'])->name('product.search');
 
-Route::get('/wishlist/add-product', [WishlistController::class, 'addToWishlist'])->name('wishlist.store');
+    Route::get('/wishlist/add-product', [WishlistController::class, 'addToWishlist'])->name('wishlist.store');
 
-//variant data
-Route::post('/getVariantDetail', [FrontProductDetailController::class, 'variantDetails'])->name('getVariantDetail');
+    //variant data
+    Route::post('/getVariantDetail', [FrontProductDetailController::class, 'variantDetails'])->name('getVariantDetail');
 
-//  cart Routes
-Route::post('/add-to-cart', [CartController::class, 'addToCart'])->name('add-to-cart');
-Route::get('/cart-details', [CartController::class, 'cartDetails'])->name('cart-details');
-Route::get('/cart-clear', [CartController::class, 'cartClear'])->name('cart-clear');
-Route::post('/cart-remove', [CartController::class, 'cartRemove'])->name('cart-remove');
-Route::post('/cart-update-qty', [CartController::class, 'updateQty'])->name('cart.update-qty');
-Route::get('/apply-coupon', [CartController::class, 'applyCoupon'])->name('apply-coupon');
-Route::get('/calculate-discount', [CartController::class, 'calculateDiscount'])->name('calculate-discount');
-
+    //  cart Routes
+    Route::post('/add-to-cart', [CartController::class, 'addToCart'])->name('add-to-cart');
+    Route::get('/cart-details', [CartController::class, 'cartDetails'])->name('cart-details');
+    Route::get('/cart-clear', [CartController::class, 'cartClear'])->name('cart-clear');
+    Route::post('/cart-remove', [CartController::class, 'cartRemove'])->name('cart-remove');
+    Route::post('/cart-update-qty', [CartController::class, 'updateQty'])->name('cart.update-qty');
+    Route::get('/apply-coupon', [CartController::class, 'applyCoupon'])->name('apply-coupon');
+    Route::get('/calculate-discount', [CartController::class, 'calculateDiscount'])->name('calculate-discount');
+});
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');

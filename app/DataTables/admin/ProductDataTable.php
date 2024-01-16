@@ -4,6 +4,7 @@ namespace App\DataTables\admin;
 
 use App\Models\Product;
 use Illuminate\Database\Eloquent\Builder as QueryBuilder;
+use Illuminate\Support\Facades\Auth;
 use Yajra\DataTables\EloquentDataTable;
 use Yajra\DataTables\Html\Builder as HtmlBuilder;
 use Yajra\DataTables\Html\Button;
@@ -79,6 +80,9 @@ class ProductDataTable extends DataTable
      */
     public function query(Product $model): QueryBuilder
     {
+        if(Auth::user()->role =='vendor'){
+            return $model->where('vendor_id',Auth::user()->vendor->id);
+        }
         return $model->newQuery();
     }
 
