@@ -119,6 +119,12 @@ class AdminVendorProfileController extends Controller
 
         $update = Vendor::findOrFail($id);
         $imagePath = $this->uploadImage($request, 'banner', 'uploads/vendor', $update->banner);
+        $user = User::findOrFail($update->user_id);
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->contact = $request->phone;
+        $user->image = $imagePath;
+        $user->save();
         $update->banner = $imagePath;
         $update->name = $request->name;
         $update->email = $request->email;
