@@ -24,6 +24,9 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
  */
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('rolecheck')->group(function () {
     Route::get('/', [HomeController::class, 'index'])->name('home');
@@ -58,9 +61,7 @@ Route::middleware('rolecheck')->group(function () {
     Route::get('/apply-coupon', [CartController::class, 'applyCoupon'])->name('apply-coupon');
     Route::get('/calculate-discount', [CartController::class, 'calculateDiscount'])->name('calculate-discount');
 });
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+
 
 Route::middleware('auth')->group(function () {
     // Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

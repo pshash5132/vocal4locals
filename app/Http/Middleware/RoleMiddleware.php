@@ -15,9 +15,12 @@ class RoleMiddleware
      */
     public function handle(Request $request, Closure $next, $role): Response
     {
-        // dd($next);
+        // dd($role);
+        if($request->user()->role=='vendor' && $role == 'admin'){
+            return $next($request);
+        }
         if ($request->user()->role !== $role) {
-            return redirect()->route('dashboard');
+            return redirect()->route('home');
         }
         return $next($request);
     }
