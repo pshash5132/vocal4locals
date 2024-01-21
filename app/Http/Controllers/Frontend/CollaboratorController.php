@@ -23,7 +23,7 @@ class CollaboratorController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'banner' => ['required', 'image', 'max:2000'],
+            'banner' => ['image', 'max:2000'],
             'email' => ['required', 'string', 'max:200', 'unique:vendors,email', 'unique:users,email'],
             'mobile' => ['required', 'string', 'max:200', 'unique:vendors,phone'],
             'address' => ['required', 'string'],
@@ -54,6 +54,6 @@ class CollaboratorController extends Controller
         $insert->user_id = $user->id;
         $insert->save();
         toastr('Vendor Created successfully', 'success');
-        return redirect()->route('homen ');
+        return redirect()->route('home');
     }
 }

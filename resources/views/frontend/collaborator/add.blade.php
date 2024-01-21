@@ -14,7 +14,7 @@
                 <div class="col-lg-12">
                     <div class="common-form-section cmn-bg-tab services-inquiry-wrap">
                         <h1>Collaboator Registration</h1>
-                        <form  method="POST" enctype="multipart/form-data" action="{{ route('collaborator.add') }}">
+                        <form  method="POST" enctype="multipart/form-data" action="{{ route('collaborator.add') }}" id="collaborator_registration">
                             @csrf
                             <div class="row">
                                 <div class="col-lg-6">
@@ -39,7 +39,7 @@
                                 <div class="col-lg-6">
                                     <div class="form-group">
                                         <label for="">Contact Number*</label>
-                                        <input type="number" name="mobile"  value="{{old('mobile')}}" class="form-control" placeholder="98980 98009" pattern="/^-?\d+\.?\d*$/" onkeypress="if(this.value.length==10) return false;">
+                                        <input type="number" name="mobile"  value="{{old('mobile')}}" class="form-control" placeholder="98980 98009">
                                     </div>
                                 </div>
 
@@ -68,3 +68,61 @@
         </div>
     </div>
 </section>
+@push('scripts')
+<script>
+    $(document).ready(function () {
+        $('#collaborator_registration').validate({
+            rules: {
+                banner: {
+                    extension: "png|jpg|jpeg|gif", // Allow only these file extensions for the banner
+                },
+                name: {
+                    required: true,
+                },
+                email: {
+                    required: true,
+                    email: true,
+                },
+                mobile: {
+                    required: true,
+                    digits: true,
+                    minlength: 10,
+                    maxlength: 10,
+                },
+                password: {
+                    required: true,
+                    minlength: 8,
+                },
+                address: {
+                    required: true,
+                },
+            },
+            messages: {
+                banner: {
+                    extension: "Please upload a valid image file (png, jpg, jpeg, gif).",
+                },
+                name: {
+                    required: "Please enter your name.",
+                },
+                email: {
+                    required: "Please enter your email address.",
+                    email: "Please enter a valid email address.",
+                },
+                mobile: {
+                    required: "Please enter your contact number.",
+                    digits: "Please enter a valid numeric contact number.",
+                    minlength: "Please enter at least 10 digits.",
+                    maxlength: "Please enter no more than 10 digits.",
+                },
+                password: {
+                    required: "Please enter a password.",
+                    minlength: "Password must be at least {0} characters long.",
+                },
+                address: {
+                    required: "Please enter your address.",
+                },
+            },
+        });
+    });
+</script>
+@endpush

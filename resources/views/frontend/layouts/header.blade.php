@@ -25,7 +25,7 @@
                           <a class="nav-link" href="{{route('contact')}}">Contact Us</a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link" href="{{route('collaborator')}}">Collaborator</a>
+                          <a class="nav-link" href="{{route('collaborator')}}">Grow With Us</a>
                         </li>
                       </ul>
                     </div>

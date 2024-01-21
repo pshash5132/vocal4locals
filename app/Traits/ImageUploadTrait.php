@@ -21,6 +21,7 @@ trait ImageUploadTrait
         if ($oldPath !== null) {
             return $oldPath;
         }
+        return null;
     }
 
     public function uploadMultiImage($request, $inputName, $path)
