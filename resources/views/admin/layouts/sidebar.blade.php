@@ -55,14 +55,6 @@
                 </ul>
             </li>
 
-
-
-
-
-
-
-
-
             <li class="dropdown {{setActive([
                 'admin.slider.index',
                 'admin.inquirySlider.index',
@@ -157,10 +149,12 @@
                 <a href="javascript:;" class="nav-link has-dropdown" data-toggle="dropdown"><i
                         class="fas fa-columns"></i> <span>Manage Products</span></a>
                 <ul class="dropdown-menu">
+                    @if (Auth::user()->role == 'admin')
                     <li class="{{setActive([
                         'admin.brand.*',
                         ])}}"><a class="nav-link" href="{{route('admin.brand.index')}}">Brand</a>
                     </li>
+                    @endif
                     <li class="{{setActive([
                         'admin.product.*',
                         'admin.products-variant.*',
