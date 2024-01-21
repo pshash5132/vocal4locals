@@ -68,8 +68,9 @@ class ProductController extends Controller
         $insert->offer_start_date = $request->offer_start_date;
         $insert->offer_end_date = $request->offer_end_date;
         $insert->product_type = $request->product_type;
+        // $insert->status = $request->status;
         $insert->status = $request->status;
-        $insert->is_approved = 1;
+        $insert->is_approved = 0;
         $insert->seo_title = $request->seo_title;
         $insert->seo_description = $request->seo_description;
         $insert->save();

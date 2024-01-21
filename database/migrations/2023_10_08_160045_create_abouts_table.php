@@ -15,6 +15,14 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->longText('containt');
+            $table->string('about_title1')->nullable();
+            $table->string('about1')->nullable();
+            $table->string('about_title2')->nullable();
+            $table->string('about2')->nullable();
+            $table->string('about_title3')->nullable();
+            $table->string('about3')->nullable();
+            $table->string('about_title4')->nullable();
+            $table->string('about4')->nullable();
             $table->timestamps();
         });
     }
