@@ -4,6 +4,7 @@ namespace App\DataTables\admin;
 
 use App\Models\Order;
 use Illuminate\Database\Eloquent\Builder as QueryBuilder;
+use Illuminate\Support\Facades\Auth;
 use Yajra\DataTables\EloquentDataTable;
 use Yajra\DataTables\Html\Builder as HtmlBuilder;
 use Yajra\DataTables\Html\Button;
@@ -54,6 +55,9 @@ class OrderDataTable extends DataTable
      */
     public function query(Order $model): QueryBuilder
     {
+        if(Auth::user()->role =='vendor'){
+            return $model::byVendor(Auth::user()->vendor)->get();
+        }
         return $model->newQuery();
     }
 

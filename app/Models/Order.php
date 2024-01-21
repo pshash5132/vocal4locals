@@ -20,4 +20,10 @@ class Order extends Model
     {
         return $this->hasMany(OrderProduct::class);
     }
+    public function scopeByVendor($query, Vendor $vendor)
+    {
+        return $query->whereHas('orderProducts', function ($query) use ($vendor) {
+            $query->where('vendor_id', $vendor->id);
+        });
+    }
 }
