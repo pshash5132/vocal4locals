@@ -21,6 +21,7 @@ class HomeController extends Controller
             $q->where('is_default', true);
         }])
             ->where('status', 1)
+            ->where('is_approved', 1)
             ->where('product_type', 'top_product')
             ->get();
 
@@ -28,6 +29,7 @@ class HomeController extends Controller
             $q->where('is_default', true);
         }])
             ->where('status', 1)
+            ->where('is_approved', 1)
             ->where('product_type', 'new_arrival')
             ->whereHas('variants', function ($q) {
                 $q->where('is_default', 1);

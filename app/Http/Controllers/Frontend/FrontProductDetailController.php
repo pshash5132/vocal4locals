@@ -57,6 +57,7 @@ class FrontProductDetailController extends Controller
             'variants',
             'brand',
         ])->where('status', '1')
+        ->where('is_approved', 1)
             ->when($request->has('subcategory'), function ($query) use ($request) {
                 return $query->whereHas('subCategory', function ($q) use ($request) {
                     $q->where('slug', $request->subcategory);
@@ -95,6 +96,8 @@ class FrontProductDetailController extends Controller
         $query = $request->input('query');
 
         $products = Product::with('productImageGallery')->where('name', 'like', '%' . $query . '%')
+        ->where('is_approved', 1)
+        ->where('status', 1)
         // ->orWhere('long_description', 'like', '%' . $query . '%')
             ->limit(10) // Adjust the number of results as needed
             ->get();
@@ -103,8 +106,9 @@ class FrontProductDetailController extends Controller
     }
     public function showDetail(string $slug)
     {
-        $product = Product::with('productImageGallery', 'subCategory', 'variants', 'brand')->where('slug', $slug)->where('status', '1')->first();
-        $related_products = Product::with('productImageGallery', 'subCategory', 'variants', 'brand')->where('status', '1')->where('subcategory_id', $product->subcategory_id)->where('id', '!=', $product->id)->get();
+
+        $product = Product::with('productImageGallery', 'subCategory', 'variants', 'brand')->where('slug', $slug)->where('status', '1')->where('is_approved', 1)->first();
+        $related_products = Product::with('productImageGallery', 'subCategory', 'variants', 'brand')->where('status', '1')->where('is_approved', 1)->where('subcategory_id', $product->subcategory_id)->where('id', '!=', $product->id)->get();
 
         // dd($product->toSql(), $product->getBindings());
         $page = 'frontend.product.detail';
@@ -143,6 +147,7 @@ class FrontProductDetailController extends Controller
             'variants',
             'brand',
         ])->where('status', '1')
+        ->where('is_approved', 1)
             ->when($request->has('subcategory'), function ($query) use ($request) {
                 return $query->whereHas('subCategory', function ($q) use ($request) {
                     $q->where('slug', $request->subcategory);

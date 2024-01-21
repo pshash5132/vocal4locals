@@ -24,6 +24,9 @@
                         <li class="nav-item">
                           <a class="nav-link" href="{{route('contact')}}">Contact Us</a>
                         </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="{{route('collaborator')}}">Grow With Us</a>
+                        </li>
                       </ul>
                     </div>
                     <div class="header-login-wrap">

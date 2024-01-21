@@ -2,6 +2,7 @@
 use App\Http\Controllers\Backend\AdminController;
 use App\Http\Controllers\Frontend\CartController;
 use App\Http\Controllers\Frontend\CheckOutController;
+use App\Http\Controllers\Frontend\CollaboratorController;
 use App\Http\Controllers\Frontend\CommonController;
 use App\Http\Controllers\Frontend\FrontProductDetailController;
 use App\Http\Controllers\Frontend\HomeController;
@@ -60,6 +61,9 @@ Route::middleware('rolecheck')->group(function () {
     Route::post('/cart-update-qty', [CartController::class, 'updateQty'])->name('cart.update-qty');
     Route::get('/apply-coupon', [CartController::class, 'applyCoupon'])->name('apply-coupon');
     Route::get('/calculate-discount', [CartController::class, 'calculateDiscount'])->name('calculate-discount');
+
+    Route::get('/collaborator', [CollaboratorController::class, 'index'])->name('collaborator');
+    Route::post('/create-collaborator', [CollaboratorController::class, 'store'])->name('collaborator.add');
 });
 
 
