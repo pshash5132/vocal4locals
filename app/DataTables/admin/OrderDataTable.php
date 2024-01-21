@@ -56,7 +56,7 @@ class OrderDataTable extends DataTable
     public function query(Order $model): QueryBuilder
     {
         if(Auth::user()->role =='vendor'){
-            return $model::byVendor(Auth::user()->vendor)->get();
+            return $model::byVendor(Auth::user()->vendor);
         }
         return $model->newQuery();
     }
