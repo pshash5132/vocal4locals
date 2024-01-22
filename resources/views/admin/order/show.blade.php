@@ -94,14 +94,27 @@
                 </div>
                 <div class="row mt-4">
                   <div class="col-lg-8">
-                    {{-- <div class="section-title">Payment Method</div>
-                    <p class="section-lead">The payment method that we provide is to make it easier for you to pay invoices.</p>
-                    <div class="images">
-                      <img src="assets/img/visa.png" alt="visa">
-                      <img src="assets/img/jcb.png" alt="jcb">
-                      <img src="assets/img/mastercard.png" alt="mastercard">
-                      <img src="assets/img/paypal.png" alt="paypal">
-                    </div> --}}
+                    <div class="col-lg-4">
+                        <div class="form-group">
+                            <label for="">Payment status</label>
+                            <select name="payment_status" id="payment_status" class="form-control" data-id="{{$order->id}}">
+
+                                <option {{$order->payment_status==0?'selected':''}} value="0">Pending</option>
+                                <option {{$order->payment_status==1?'selected':''}} value="1">Completed</option>
+
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="form-group">
+                            <label for="">Order status</label>
+                            <select name="order_status" id="order_status" class="form-control" data-id="{{$order->id}}">
+                                @foreach (config('order_status.order_status_admin') as $key => $orderStatus)
+                                    <option {{$order->order_status==$key?'selected':''}} value="{{$key}}">{{$orderStatus['status']}}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                    </div>
                   </div>
                   <div class="col-lg-4 text-right">
                     <div class="invoice-detail-item">
@@ -128,13 +141,59 @@
           </div>
           <hr>
           <div class="text-md-right">
-            <div class="float-lg-left mb-lg-0 mb-3">
+            {{-- <div class="float-lg-left mb-lg-0 mb-3">
               <button class="btn btn-primary btn-icon icon-left"><i class="fas fa-credit-card"></i> Process Payment</button>
               <button class="btn btn-danger btn-icon icon-left"><i class="fas fa-times"></i> Cancel</button>
-            </div>
-            <button class="btn btn-warning btn-icon icon-left"><i class="fas fa-print"></i> Print</button>
+            </div> --}}
+            <button class="btn btn-warning btn-icon icon-left print"><i class="fas fa-print"></i> Print</button>
+
+
           </div>
         </div>
       </div>
     </section>
   </div>
+@push('scripts')
+<script>
+
+    $(document).ready(function(){
+        $("#order_status").on('change',function(){
+            let status = $(this).val()
+            let id = $(this).data('id')
+            $.ajax({
+                method:'GET',
+                data:{status:status,id:id},
+                url:"{{route('admin.order.status')}}",
+                dataType:'json',
+                success:function(res){
+                    if(res.status==1){
+                        toastr.success(res.message);
+                    }
+                }
+            })
+        })
+        $("#payment_status").on('change',function(){
+            let status = $(this).val()
+            let id = $(this).data('id')
+            $.ajax({
+                method:'GET',
+                data:{status:status,id:id},
+                url:"{{route('admin.order.paymentstatus')}}",
+                dataType:'json',
+                success:function(res){
+                    if(res.status==1){
+                        toastr.success(res.message);
+                    }
+                }
+            })
+        })
+        $('.print').on('click',function(){
+            let printBody = $('.invoice-print').html();
+            let orignalBody = $('body').html();
+            $('body').html(printBody)
+            window.print();
+            $('body').html(orignalBody);
+        })
+    })
+</script>
+@endpush

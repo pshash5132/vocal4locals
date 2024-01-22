@@ -23,7 +23,7 @@ class OrderDataTable extends DataTable
         return (new EloquentDataTable($query))
             ->addColumn('action', function ($query) {
                 $showBtn = "<a href='" . route('admin.order.show', $query->id) . "' class='btn btn-primary'><i class='fa fa-eye'></i></a>";
-                $deleteBtn = "<a href='" . route('admin.product.destroy', $query->id) . "' class='btn btn-danger ml-2 delete-item'><i class='far fa-trash-alt'></i></a>";
+                $deleteBtn = "<a href='" . route('admin.order.destroy', $query->id) . "' class='btn btn-danger ml-2 delete-item'><i class='far fa-trash-alt'></i></a>";
                 $statusBtn = "<a href='" . route('admin.product.destroy', $query->id) . "' class='btn btn-warning ml-2 delete-item'><i class='fas fa-truck'></i></a>";
 
                 return $showBtn . $deleteBtn . $statusBtn;
@@ -35,14 +35,40 @@ class OrderDataTable extends DataTable
                 return date('d-m-Y', strtotime($query->created_at));
             })
             ->addColumn('order_status', function ($query) {
-                return "<span class='badge bg-warning'>$query->order_status</span>";
+                switch ($query->order_status) {
+                    case 'pending':
+                        return "<span class='badge bg-warning'>$query->order_status</span>";
+                        break;
+                    case 'processed_and_ready_to_ship':
+                        return "<span class='badge bg-info'>$query->order_status</span>";
+                        break;
+                    case 'dropped_off':
+                        return "<span class='badge bg-info'>$query->order_status</span>";
+                        break;
+                    case 'shipped':
+                        return "<span class='badge bg-info'>$query->order_status</span>";
+                        break;
+                    case 'out_of_delivery':
+                        return "<span class='badge bg-primary'>$query->order_status</span>";
+                        break;
+                    case 'delivered':
+                        return "<span class='badge bg-success'>$query->order_status</span>";
+                        break;
+                    case 'cancelled':
+                        return "<span class='badge bg-danger'>$query->order_status</span>";
+                        break;
+                    default:
+                        # code...
+                        break;
+                }
+
             })
             ->addColumn('payment_status', function ($query) {
                 if ($query->payment_status == 1) {
 
-                    return "<span class='badge bg-success'>$query->payment_status</span>";
+                    return "<span class='badge bg-success'>Completed</span>";
                 } else {
-                    return "<span class='badge bg-danger'>$query->payment_status</span>";
+                    return "<span class='badge bg-danger'>Pending</span>";
 
                 }
             })
