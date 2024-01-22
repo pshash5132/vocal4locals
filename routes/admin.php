@@ -84,5 +84,6 @@ Route::put('coupons-changeStatus', [CouponController::class, 'changeStatus'])->n
 
 Route::resource('offer', OfferController::class);
 Route::put('offer-changeStatus', [OfferController::class, 'changeStatus'])->name('offer.changeStatus');
-
 Route::resource('order', OrderController::class);
+Route::get('order-status',[OrderController::class,'changeOrderStatus'])->name('order.status');
+Route::get('payment-status',[OrderController::class,'changePaymentStatus'])->name('order.paymentstatus');

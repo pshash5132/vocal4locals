@@ -69,6 +69,23 @@ class OrderController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $order = Order::findOrFail($id);
+        $order->delete();
+        return response(['status'=>1,'message'=>'order deleted successfully']);
+    }
+
+    public function changeOrderStatus(Request $request)
+    {
+        $order = Order::findOrFail($request->id);
+        $order->order_status = $request->status;
+        $order->save();
+        return response(['status'=>1,'message'=>'Order status updated']);
+    }
+    public function changePaymentStatus(Request $request)
+    {
+        $order = Order::findOrFail($request->id);
+        $order->payment_status = $request->status;
+        $order->save();
+        return response(['status'=>1,'message'=>'Payment status updated']);
     }
 }
