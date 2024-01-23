@@ -2,7 +2,8 @@
     $address = json_decode($order->order_address);
     $shipping = json_decode($order->shipping_method);
     $coupon = json_decode(@$order->coupon);
-
+    $current_status = config('order_status.order_status_admin')[$order->order_status]['status'];
+    $current_detail = config('order_status.order_status_admin')[$order->order_status]['details'];
 @endphp
 <!DOCTYPE html>
 <html lang="en">
@@ -33,10 +34,10 @@
                         </thead>
                         <tbody style="margin: 50px auto 0 !important; width: 100%; display: block; max-width: 560px; border: 1px solid #374850; border-radius: 10px;padding: 43px 35px;">
                             <tr>
-                                <td style="font-size: 24px; font-weight: 600; color: #374850;">Order Placed</td>
+                                <td style="font-size: 24px; font-weight: 600; color: #374850;">{{ ucfirst($current_status) }}</td>
                             </tr>
                             <tr style="width: 100%; display: flex; gap: 20px;">
-                                <td style="width: 57%; color: #374850; font-weight: 400; margin-top: 15px; display: block; font-size: 14px; line-height: 24px;">Hi {{$order->user->name}}, <span style="color: #08BA26; display: block;"> Your order has been successfully placed.</span></td>
+                                <td style="width: 57%; color: #374850; font-weight: 400; margin-top: 15px; display: block; font-size: 14px; line-height: 24px;">Hi {{$order->user->name}}, <span style="color: #08BA26; display: block;">{{ucfirst($current_detail)}}.</span></td>
                                 <td style="width: 43%; font-size: 16px; text-align: right; color: #374850; line-height: 30px; font-weight: 400; margin-top: 15px; display: block;">
                                     <p style="font-size: 12px; line-height: 24px; margin-bottom: 0;">Order placed on <b style="color: #374850; font-weight: 700;"> {{date('d F,Y', strtotime($order->created_at))}}</b></p>
                                     <p style="font-size: 12px; line-height: 24px; margin-bottom: 0;">Order ID <b style="color: #374850; font-weight: 700;"> {{$order->invoice_id}} </b></p>

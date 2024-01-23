@@ -47,6 +47,23 @@
                             }
                         })
                 })
+                $('body').on('click','.change-is_approved',function(){
+                    let isChecked = $(this).is(':checked');
+                    let id = $(this).data('id')
+                    $.ajax({
+                            type: 'PUT',
+                            url: "{{route('admin.product.changeApproval')}}",
+                            data:{
+                                status:isChecked,id
+                            },
+                            success: function(res) {
+                                toastr.success(res.message)
+                            },
+                            error: function(xhr, status, error) {
+                                console.log(error)
+                            }
+                        })
+                })
             })
         </script>
     @endpush

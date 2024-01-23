@@ -84,7 +84,7 @@ require __DIR__ . '/auth.php';
 
 Route::get('admin/login', [AdminController::class, 'login'])->name('admin.login');
 
-Route::group(['middleware' => ['auth'], 'prefix' => 'user', 'as' => 'user.'], function () {
+Route::group(['middleware' => ['auth','verified'], 'prefix' => 'user', 'as' => 'user.'], function () {
     Route::get('/profile', [UserProfileController::class, 'index'])->name('profile');
     Route::POST('/profile', [UserProfileController::class, 'update'])->name('profile.update');
     Route::resource('/user-address', UserAddressController::class);

@@ -168,4 +168,13 @@ class ProductController extends Controller
         return response(['status' => '1', 'message' => 'Status Updated Successfully']);
 
     }
+    public function changeApproval(Request $request)
+    {
+        $data = Product::findOrFail($request->id);
+        $data->is_approved = $request->status == 'true' ? '1' : '0';
+        $data->save();
+        // dd($data);
+        return response(['status' => '1', 'message' => 'Approval Updated Successfully']);
+
+    }
 }

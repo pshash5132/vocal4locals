@@ -26,8 +26,14 @@ class OrderConfirmation extends Mailable
      */
     public function envelope(): Envelope
     {
+        if($this->order->order_status=='pending'){
+            $subject = 'Order Confirmation';
+        }else{
+            $subject = 'Order Update';
+        }
+        // dd();
         return new Envelope(
-            subject: 'Order Confirmation',
+            subject: $subject,
         );
     }
 

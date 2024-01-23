@@ -35,7 +35,7 @@
                     let id = $(this).data('id')
                     $.ajax({
                             type: 'PUT',
-                            url: "{{route('admin.category.changeStatus')}}",
+                            url: "{{route('admin.shipping-rule.changeStatus')}}",
                             data:{
                                 status:isChecked,id
                             },
