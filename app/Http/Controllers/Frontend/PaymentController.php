@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Mail\OrderConfirmation;
 use App\Models\Order;
 use App\Models\OrderProduct;
+use App\Models\ProductVariant;
 use Cart;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
@@ -28,11 +29,11 @@ class PaymentController extends Controller
         $order->discount_amount = getMainCartDiscount();
         $order->product_qty = \Cart::content()->count();
         $order->payment_method = "COD";
-        $order->payment_status = "Pending";
+        $order->payment_status = 0;
         $order->order_address = $address;
         $order->shipping_method = $shipping_method;
         $order->coupon = $coupon;
-        $order->order_status = "Pending";
+        $order->order_status = "pending";
         $order->save();
 
         foreach (Cart::content() as $item) {
@@ -45,6 +46,10 @@ class PaymentController extends Controller
             $orderProduct->unit_price = $item->price;
             $orderProduct->qty = $item->qty;
             $orderProduct->save();
+
+            // $product_variant = ProductVariant::findOrFail($orderProduct->product_variant_id);
+            // $product_variant->qty = $product_variant->qty - $item->qty;
+            // $product_variant->save();
         }
         Cart::destroy();
         Session::forget('address');

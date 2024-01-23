@@ -4,8 +4,10 @@ namespace App\Http\Controllers\Backend;
 
 use App\DataTables\admin\OrderDataTable;
 use App\Http\Controllers\Controller;
+use App\Mail\OrderConfirmation;
 use App\Models\Order;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class OrderController extends Controller
 {
@@ -79,6 +81,8 @@ class OrderController extends Controller
         $order = Order::findOrFail($request->id);
         $order->order_status = $request->status;
         $order->save();
+
+        Mail::to($order->user->email)->send(new OrderConfirmation($order));
         return response(['status'=>1,'message'=>'Order status updated']);
     }
     public function changePaymentStatus(Request $request)

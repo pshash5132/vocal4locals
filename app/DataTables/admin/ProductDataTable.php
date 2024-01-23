@@ -70,8 +70,28 @@ class ProductDataTable extends DataTable
                     </label>';
                 }
 
+
             })
-            ->rawColumns(['image', 'type', 'status', 'action'])
+
+            ->addColumn('is_approved', function ($query) {
+                if ($query->is_approved == 1) {
+                    return '<label class="custom-switch mt-2">
+                    <input type="checkbox" checked  name="custom-switch-checkbox" class="custom-switch-input change-is_approved" data-id="' . $query->id . '">
+                    <span class="custom-switch-indicator"></span>
+                    </label>';
+                } else {
+                    return '<label class="custom-switch mt-2">
+                    <input type="checkbox"  name="custom-switch-checkbox" class="custom-switch-input change-is_approved" data-id="' . $query->id . '">
+                    <span class="custom-switch-indicator"></span>
+                    </label>';
+                }
+
+
+            })
+            ->addColumn('vendor_name', function ($query) {
+               return $query->vendor->name;
+            })
+            ->rawColumns(['image', 'type', 'status', 'action','is_approved'])
             ->setRowId('id');
     }
 
@@ -83,7 +103,7 @@ class ProductDataTable extends DataTable
         if(Auth::user()->role =='vendor'){
             return $model->where('vendor_id',Auth::user()->vendor->id);
         }
-        return $model->newQuery();
+        return $model->orderBy('id', 'desc');
     }
 
     /**
@@ -116,10 +136,12 @@ class ProductDataTable extends DataTable
         return [
 
             Column::make('id'),
+            Column::make('vendor_name'),
             Column::make('image'),
             Column::make('name'),
             Column::make('type')->width(100),
             Column::make('status'),
+            Column::make('is_approved'),
             Column::computed('action')->width(200),
         ];
     }

@@ -55,6 +55,7 @@ Route::resource('sub-category', SubCategoryController::class);
 Route::resource('brand', BrandController::class);
 Route::get('product/get-subCategories', [ProductController::class, 'getSubCategories'])->name('product.get-subCategories');
 Route::put('product/changeStatus', [ProductController::class, 'changeStatus'])->name('product.changeStatus');
+Route::put('product/changeApproval', [ProductController::class, 'changeApproval'])->name('product.changeApproval');
 Route::resource('product', ProductController::class);
 Route::resource('products-image-gallery', ProductImageGalleryController::class);
 
