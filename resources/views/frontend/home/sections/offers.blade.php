@@ -10,14 +10,14 @@
    <div class="owl-carousel owl-theme latest-offers-slider">
     @foreach ($offers as $offer)
 
+    <div class="item">
+        <div class="latest-offers-wrap">
+            <a href="{{route('product-list',['offer'=>$offer->slug])}}">
+                <img src="{{asset($offer->image)}}" alt="{{$offer->slug}}" />
+            </a>
+        </div>
+    </div>
     @endforeach
-       <div class="item">
-           <div class="latest-offers-wrap">
-               <a href="{{route('product-list',['offer'=>$offer->slug])}}">
-                   <img src="{{asset($offer->image)}}" alt="{{$offer->slug}}" />
-               </a>
-           </div>
-       </div>
        {{-- <div class="item">
            <div class="latest-offers-wrap">
                <a href="#">
