@@ -15,6 +15,7 @@ class HomeController extends Controller
     {
 
         $page = 'frontend.home.home';
+
         $sliders = Slider::where('status', 1)->orderBy('serial', 'asc')->get();
 
         $top_products = Product::with(["reviews","variants" => function ($q) {

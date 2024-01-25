@@ -59,7 +59,8 @@
                 'admin.slider.index',
                 'admin.inquirySlider.index',
                 'admin.about.index',
-                'admin.companyDetail.*'
+                'admin.companyDetail.*',
+                'admin.siteInfo.*'
                 ])}}">
                 <a href="javascript:;" class="nav-link has-dropdown" data-toggle="dropdown"><i
                         class="fas fa-columns"></i> <span>Manage Website</span></a>
@@ -76,6 +77,11 @@
                     <li class="{{setActive([
                             'admin.companyDetail.index'
                             ])}}"><a class="nav-link" href="{{route('admin.companyDetail.index')}}">Company Details</a></li>
+
+                    <li class="{{setActive([
+                    'admin.siteInfo.index'
+                    ])}}"><a class="nav-link" href="{{route('admin.siteInfo.index')}}">Site Info Details</a>
+                    </li>
 
                 </ul>
             </li>

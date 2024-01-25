@@ -67,7 +67,7 @@
                                     @endfor
 
                                     ({{count($product->reviews)}})
-                                </a>
+
 
                                 </div>
                             </div>
@@ -158,12 +158,20 @@
                             <div class="products-price-rating">
                                 <p>₹{{$product->variants[0]->price}}</p>
                                 <div class="rating-wrap">
-                                    <a href="#">
-                                        <img src="{{asset('frontend')}}/assets/images/star.svg" alt="Star" />
-                                        <img src="{{asset('frontend')}}/assets/images/star.svg" alt="Star" />
-                                        <img src="{{asset('frontend')}}/assets/images/star.svg" alt="Star" />
-                                        <img src="{{asset('frontend')}}/assets/images/star.svg" alt="Star" />
-                                        <img src="{{asset('frontend')}}/assets/images/star.svg" alt="Star" />
+                                    <a href="javascript:;">
+                                        @php
+                                        $avgRating = $product->reviews->avg('rating');
+                                        $fullRating = round($avgRating);
+                                        @endphp
+                                        @for ($i = 1; $i <=5 ; $i++)
+                                            @if ($i<= $fullRating)
+                                                <img src="{{asset('frontend')}}/assets/images/fill-star.svg" alt="Star" />
+                                            @else
+                                                <img src="{{asset('frontend')}}/assets/images/star.svg" alt="Star" />
+                                            @endif
+                                        @endfor
+
+                                        ({{count($product->reviews)}})
                                     </a>
                                 </div>
                             </div>

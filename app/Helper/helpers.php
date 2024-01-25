@@ -2,6 +2,8 @@
 // set sidebar active
 
 use App\Models\Category;
+use App\Models\SiteInfo;
+
 function setActive(array $routes)
 {
     if (is_array($routes)) {
@@ -27,6 +29,9 @@ function categories()
         ->get();
 }
 
+function siteInfo(){
+    return  SiteInfo::first();
+}
 function checkDiscount($product)
 {
     $currentDate = date('Y-m-d');

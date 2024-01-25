@@ -36,15 +36,18 @@
     @yield('content')
 
     <!-- get-in-touch-section -->
+    @php
+    $siteInfo = siteInfo();
+    @endphp
     @if (!isset($notshowTouch))
     <section class="get-in-touch-section common-form-section position-relative">
-        <img src="{{ asset('frontend') }}/assets/images/get-in-touch-bg.png" class="get-in-touch-img"
+        <img src="{{ asset($siteInfo?$siteInfo->footer_image:'frontend/assets/images/get-in-touch-bg.png') }}" class="get-in-touch-img"
             alt="Get In Touch Background" />
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-7">
                     <div class="get-in-touch-content">
-                        <h2>Can't find what you are looking for?</h2>
+                        <h2>{{$siteInfo?$siteInfo->footer_title:`Can't find what you are looking for?`}}</h2>
                         <ul>
                             <li>
                                 <img src="{{ asset('frontend') }}/assets/images/call.svg" alt="Call" />

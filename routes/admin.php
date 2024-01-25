@@ -18,6 +18,7 @@ use App\Http\Controllers\Backend\ProfileController;
 use App\Http\Controllers\Backend\ServiceCategoryController;
 use App\Http\Controllers\Backend\ServiceProductController;
 use App\Http\Controllers\Backend\ShippingRuleController;
+use App\Http\Controllers\Backend\SiteInfoController;
 use App\Http\Controllers\Backend\SliderController;
 use App\Http\Controllers\Backend\SubCategoryController;
 use Illuminate\Support\Facades\Route;
@@ -84,6 +85,7 @@ Route::put('service-product-changeStatus', [ServiceProductController::class, 'ch
 Route::put('coupons-changeStatus', [CouponController::class, 'changeStatus'])->name('coupons.changeStatus');
 
 Route::resource('offer', OfferController::class);
+Route::resource('siteInfo', SiteInfoController::class);
 Route::put('offer-changeStatus', [OfferController::class, 'changeStatus'])->name('offer.changeStatus');
 Route::resource('order', OrderController::class);
 Route::get('order-status',[OrderController::class,'changeOrderStatus'])->name('order.status');

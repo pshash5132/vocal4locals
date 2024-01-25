@@ -39,7 +39,7 @@
                             @endif
 
                             <div class="rating-wrap">
-                                <a href="javascript;">
+                                <a href="javascript:;">
 
                                 @php
                                     $avgRating = $product->reviews->avg('rating');
