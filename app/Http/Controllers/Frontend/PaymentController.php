@@ -11,6 +11,7 @@ use Cart;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Http\Request;
 
 class PaymentController extends Controller
 {
@@ -63,5 +64,14 @@ class PaymentController extends Controller
         }
         $data['page'] = 'frontend.pages.payment';
         return view('frontend.layouts.master', $data);
+    }
+
+    public function order_products(Request $req){
+        $order = Order::findOrFail($req->orderId);
+        $html = "";
+        foreach ($order->orderProducts as $key => $value) {
+            $html .= "<option value='".$value->product->id."'>".$value->product->name."</option>";
+        }
+        return $html;
     }
 }

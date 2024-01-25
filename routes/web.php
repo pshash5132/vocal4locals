@@ -8,6 +8,7 @@ use App\Http\Controllers\Frontend\FrontProductDetailController;
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\InquiryController;
 use App\Http\Controllers\Frontend\PaymentController;
+use App\Http\Controllers\Frontend\ReviewController;
 use App\Http\Controllers\Frontend\UserAddressController;
 use App\Http\Controllers\Frontend\UserProfileController;
 use App\Http\Controllers\Frontend\WishlistController;
@@ -94,6 +95,8 @@ Route::group(['middleware' => ['auth','verified'], 'prefix' => 'user', 'as' => '
     Route::get('/checkout', [CheckOutController::class, 'index'])->name('checkout');
     Route::post('/checkout/form-submit', [CheckOutController::class, 'checkOutFormSubmit'])->name('checkout.form-submit');
     Route::get('/payment', [PaymentController::class, 'index'])->name('payment');
+    Route::get('/order_products', [PaymentController::class, 'order_products'])->name('order_products');
+    Route::post('/review', [ReviewController::class, 'create'])->name('review.create');
 
     Route::post('/update-password', [UserProfileController::class, 'updatePassword'])->name('update.password');
 

@@ -44,6 +44,19 @@
         })
     })
 
+    $('.send-review').click(function(){
+        var orderId = $(this).data('id');
+        $("#order_id").val(orderId);
+        $.ajax({
+            type:'GET',
+            data:{orderId},
+            url:"{{route('user.order_products')}}",
+            dataType:'html',
+            success:function(res){
+                $("#review_product_name").html(res)
+            }
+        })
+    })
     $('.deleteAddress').click(function(){
         let deleteurl = $(this).data('url');
         Swal.fire({

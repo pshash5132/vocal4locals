@@ -146,6 +146,7 @@ class FrontProductDetailController extends Controller
             'subCategory.category',
             'variants',
             'brand',
+            'reviews'
         ])->where('status', '1')
         ->where('is_approved', 1)
             ->when($request->has('subcategory'), function ($query) use ($request) {

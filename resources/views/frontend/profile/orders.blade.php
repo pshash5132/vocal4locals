@@ -190,13 +190,14 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
         <h2>Rate this Product</h2>
         <div class="common-form-section cmn-bg-tab">
-            <form class="py-0">
+            <form class="py-0" action="{{route('user.review.create')}}" method="post">
+                @csrf
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="form-group">
                             <label for="">Enter/Select the product name</label>
-                            <select name="" id="" class="form-control">
-                                <option value="Gujarat">Enter/Select the product name</option>
+                            <select name="review_product_id" id="review_product_name" class="form-control">
+                                <option value="">Enter/Select the product name</option>
 
                             </select>
                         </div>
@@ -204,9 +205,10 @@
                     <div class="col-lg-12">
                         <div class="form-group">
                             <label for="">Review the product</label>
-                            <textarea name="" id="" rows="3" placeholder="Write a review the product" class="form-control"></textarea>
+                            <textarea name="review" id="" rows="3" placeholder="Write a review the product" class="form-control"></textarea>
                         </div>
                     </div>
+                    <input type="hidden" value=""  id="order_id" name="order_id">
                     <div class="col-lg-12 rating-wrapper-main">
                         <h2>Rating</h2>
                         <div class="rating__stars">
