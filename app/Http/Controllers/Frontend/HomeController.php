@@ -24,6 +24,10 @@ class HomeController extends Controller
             ->where('status', 1)
             ->where('is_approved', 1)
             ->where('product_type', 'top_product')
+            ->whereHas('variants', function ($q) {
+                $q->where('is_default', 1);
+
+            })
             ->get();
 
         $new_products = Product::with(["reviews","variants" => function ($q) {
