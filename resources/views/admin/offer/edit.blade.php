@@ -34,7 +34,7 @@
                                     <br>
                                     <img src="{{asset($offer->image)}}" width="200" />
                                 </div>
-                                <label for="image">Offer Image:</label>
+                                <label for="image">Offer Image:(Max 2MB) (537px X 276px)</label>
                                 <input type="file" name="image" id="image" class="form-control-file">
                             </div>
 

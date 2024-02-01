@@ -21,7 +21,7 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label>Image</label>
+                                        <label>Image (Max 2MB)(279px X 357px)</label>
                                         <input name="image" type="file" class="form-control">
                                     </div>
                                 </div>

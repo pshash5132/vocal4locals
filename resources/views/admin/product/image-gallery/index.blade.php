@@ -21,7 +21,7 @@
                          <form action="{{route('admin.products-image-gallery.store')}}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group">
-                                <label for="image" >Image<code>[Multiple Image Supported]</code></label>
+                                <label for="image" >Image<code>[Multiple Image Supported]</code> (Max 2MB)(279px X 357px)</label>
                                 <input type="file" class="form-control" multiple name="images[]"/>
                                 <input type="hidden"  name="product_id" value="{{$product->id}}"/>
                             </div>

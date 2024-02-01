@@ -35,13 +35,13 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label>Category Image</label>
+                                        <label>Category Image (80px X 80px)</label>
                                         <input type="file" name="image" class="form-control">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label>Banner Image</label>
+                                        <label>Banner Image (537px X 276px)</label>
                                         <input type="file" name="banner" class="form-control">
                                     </div>
                                 </div>

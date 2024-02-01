@@ -42,7 +42,7 @@
                                         <img src="{{asset($data->image)}}" width="150" height="150"/>
                                     </div>
                                     <div class="form-group">
-                                        <label>Category Image</label>
+                                        <label>Category Image (80px X 80px)</label>
                                         <input type="file" name="image" class="form-control">
                                     </div>
                                 </div>
@@ -53,7 +53,7 @@
                                         <img src="{{asset($data->banner)}}" width="150" height="150" />
                                     </div>
                                     <div class="form-group">
-                                        <label>Banner Image</label>
+                                        <label>Banner Image (537px X 276px)</label>
                                         <input type="file" name="banner" class="form-control">
                                     </div>
                                 </div>

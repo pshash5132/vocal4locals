@@ -56,9 +56,9 @@
             </li>
 
             <li class="dropdown {{setActive([
-                'admin.slider.index',
-                'admin.inquirySlider.index',
-                'admin.about.index',
+                'admin.slider.*',
+                'admin.inquirySlider.*',
+                'admin.about.*',
                 'admin.companyDetail.*',
                 'admin.siteInfo.*'
                 ])}}">
@@ -66,10 +66,10 @@
                         class="fas fa-columns"></i> <span>Manage Website</span></a>
                 <ul class="dropdown-menu">
                     <li class="{{setActive([
-                        'admin.slider.index',
+                        'admin.slider.*',
                         ])}}"><a class="nav-link" href="{{route('admin.slider.index')}}">Home Slider</a></li>
                     <li class="{{setActive([
-                        'admin.inquirySlider.index'
+                        'admin.inquirySlider.*'
                         ])}}"><a class="nav-link" href="{{route('admin.inquirySlider.index')}}">Inquiry Slider</a></li>
                     <li class="{{setActive([
                         'admin.about.index'

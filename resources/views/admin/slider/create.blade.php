@@ -20,7 +20,7 @@
                         <form method="POST" enctype="multipart/form-data" action="{{ route('admin.slider.store') }}">
                             @csrf
                             <div class="form-group">
-                                <label>Banner (Max 2MB)</label>
+                                <label>Banner (Max 2MB) (1200px X 600px)</label>
                                 <input name="banner" type="file" class="form-control">
                             </div>
                             <div class="form-group">

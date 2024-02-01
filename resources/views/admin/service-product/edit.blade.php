@@ -104,7 +104,7 @@
                                         <img src="{{asset($data->image)}}" width="150" height="150"/>
                                     </div>
                                     <div class="form-group">
-                                        <label>Category Image</label>
+                                        <label>Service Image (279px X 357px)</label>
                                         <input type="file" name="image" class="form-control">
                                     </div>
                                 </div>
