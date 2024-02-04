@@ -1343,7 +1343,7 @@ body {
     width: 88px !important;
 }
 .search-category-wrap input[type='search'] {
-    width: 270px !important;
+    width: 100% !important;
 }
 .products-wrap-img a {
     display: block;
@@ -1562,27 +1562,19 @@ body {
 .navbar-toggler:focus {
     box-shadow: none;
 }
-
 .search-category-wrap > .dropdown {
     width: 30%;
+    margin-right: 20px;
 }
-
-
-
-
 .cmn-light-bg {
     background: #F7FAFC;
 }
-
-
 .main-tab-section {
     padding: 38px 0;
 }
-
 .main-tab-section .breadcrumb {
     padding-bottom: 28px;
 }
-
 .main-tab-section h1,
 .main-tab-section h2  {
     font-size: 24px;
@@ -1590,7 +1582,6 @@ body {
     color: #374850;
     margin-bottom: 18px;
 }
-
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
@@ -1895,7 +1886,7 @@ input[type=checkbox]:checked + label:before {
 
 .buttons-wrap .f-btn {
     max-width: 219px;
-    margin: 0 6px;
+    margin: 0 6px 10px !important;
     /* border-radius: 0 0 10px 10px; */
 }
 .hotel-tab-wrap .buttons-wrap .f-btn  {
@@ -1905,6 +1896,8 @@ input[type=checkbox]:checked + label:before {
     background: #F6F6F6;
     border: 1px solid var(--primary-color);
     color: var(--primary-color);
+    text-decoration: none;
+    display: inline-block;
 }
 
 .border-btn:hover {
@@ -2841,11 +2834,9 @@ button:focus:not(:focus-visible) {
     font-weight: 400;
 }
 
-
 .billing-details-wrap .common-form-section form {
     padding: 0;
 }
-
 
 .billing-details-wrap {
     padding: 24px 23px;
@@ -3897,6 +3888,11 @@ button:focus:not(:focus-visible) {
     text-shadow: 0px 7px #20274B;
     font-weight: 900;
     font-size: 48px;
+}
+
+.font-medium.text-sm.text-green-600 {
+    position: relative;
+    z-index: 2;
 }
 
 .inquiry-tab-section .banner-slider-content p {
@@ -5059,10 +5055,27 @@ button:focus:not(:focus-visible) {
     .search-category-wrap input[type='submit'] {
         padding: 6px 0px !important;
     }
+    .link-cart-wrap img {
+        max-width: 13px;
+    }
+    .navbar-toggler-icon {
+        width: 18px;
+        height: 18px;
+    }
+    .login-wrap a img {
+        width: 12px;
+        margin-right: 4px;
+    }
+    .link-cart-wrap {
+        padding-left: 7px;
+    }
     .buy-now-wrap, .service-detail-wrapper {
         flex-direction: column;
     }
-
+    .dropdown-menu .submenu {
+        left: inherit !important;
+        top: auto !important;
+    }
     .buy-now-left , .buy-now-right {
         width: 100%;
     }
@@ -5404,6 +5417,9 @@ button:focus:not(:focus-visible) {
     #sync2 .item .slider-btn {
         width: 100px;
         height: 100px;
+    }
+    .listing-row {
+        padding: 18px 20px;
     }
 }
 
