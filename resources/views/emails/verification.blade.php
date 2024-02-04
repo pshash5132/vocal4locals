@@ -28,7 +28,7 @@
                         </thead>
                         <tbody style="margin: 50px auto 0 !important; width: 100%; display: block; max-width: 560px; border: 1px solid #374850; border-radius: 10px;padding: 43px 35px;">
                             <tr>
-                                <td style="font-size: 24px; font-weight: 600; color: #374850;">Welcome Bill Kenney,</td>
+                                <td style="font-size: 24px; font-weight: 600; color: #374850;">Welcome {{$user->name}},</td>
                             </tr>
                             <tr>
                                 <td style="font-size: 16px; color: #374850; line-height: 30px; font-weight: 400; margin-top: 15px; display: block;">We pleasure to have you!  joining under <span style="color: #374850; font-weight: 700;">Vocaal4local's</span> our e-commerce plat form. Please click on this link below to complete your registration and enjoy wonderful offers.</td>
