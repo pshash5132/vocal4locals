@@ -23,7 +23,7 @@
                     <table style="width: 100%; max-width: 640px; margin: 0 auto;">
                         <thead>
                             <tr>
-                                <td style="text-align: center;"><a href="#"><img src="{{asset('frontend/assets')}}/images/logo.svg" style="max-width: 287px;" alt="Vocalforlocal" /></a></td>
+                                <td style="text-align: center;"><a href="#"><img src="{{asset('frontend/assets')}}/images/logo.png" style="max-width: 287px;" alt="Vocalforlocal" /></a></td>
                             </tr>
                         </thead>
                         <tbody style="margin: 50px auto 0 !important; width: 100%; display: block; max-width: 560px; border: 1px solid #374850; border-radius: 10px;padding: 43px 35px;">
@@ -50,10 +50,10 @@
                                 <td>
                                     <div class="social-media-wrap" style="margin-bottom: 10px;">
                                         <ul>
-                                            <li><a href="#" style="width: 35px; height: 35px; padding: 7px;border-radius: 50%; background: #5264AE; margin: 0 7px;"><img src="{{asset('frontend/assets')}}/images/Insta.svg" alt="Insta" style="filter: brightness(0) invert(1); position: relative; "></a></li>
-                                            <li><a href="#" style="width: 35px; height: 35px; padding: 7px;border-radius: 50%; background: #5264AE; margin: 0 7px;"><img src="{{asset('frontend/assets')}}/images/fb.svg" alt="Facebook" style="filter: brightness(0) invert(1); position: relative; "></a></li>
-                                            <li><a href="#" style="width: 35px; height: 35px; padding: 7px;border-radius: 50%; background: #5264AE; margin: 0 7px;"><img src="{{asset('frontend/assets')}}/images/Twiter.svg" alt="Twiter" style="filter: brightness(0) invert(1); position: relative; "></a></li>
-                                            <li><a href="#" style="width: 35px; height: 35px; padding: 7px;border-radius: 50%; background: #5264AE; margin: 0 7px;"><img src="{{asset('frontend/assets')}}/images/Pintrest.svg" alt="Pintrest" style="filter: brightness(0) invert(1); position: relative; "></a></li>
+                                            <li><a href="#" style="width: 35px; height: 35px; padding: 7px;border-radius: 50%; background: #5264AE; margin: 0 7px;"><img src="{{asset('frontend/assets')}}/images/instagram.png" alt="Insta" style="filter: brightness(0) invert(1); position: relative; "></a></li>
+                                            <li><a href="#" style="width: 35px; height: 35px; padding: 7px;border-radius: 50%; background: #5264AE; margin: 0 7px;"><img src="{{asset('frontend/assets')}}/images/facebook.png" alt="Facebook" style="filter: brightness(0) invert(1); position: relative; "></a></li>
+                                            <li><a href="#" style="width: 35px; height: 35px; padding: 7px;border-radius: 50%; background: #5264AE; margin: 0 7px;"><img src="{{asset('frontend/assets')}}/images/linkedin.png" alt="Twiter" style="filter: brightness(0) invert(1); position: relative; "></a></li>
+                                            <li><a href="#" style="width: 35px; height: 35px; padding: 7px;border-radius: 50%; background: #5264AE; margin: 0 7px;"><img src="{{asset('frontend/assets')}}/images/whatsapp.png" alt="Pintrest" style="filter: brightness(0) invert(1); position: relative; "></a></li>
                                         </ul>
                                     </div>
                                 </td>
