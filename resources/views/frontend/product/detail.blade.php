@@ -83,7 +83,7 @@
 
                             </div>
                             <div class="size-main-wrapper">
-                                <p>Size:</p>
+                                <p>{{@$product->package->name}}</p>
                                 <div class="select-size">
                                     <?php $i = 0; ?>
                                     @foreach ($product->variants as $variant)
@@ -99,13 +99,13 @@
                             <input type="hidden" class="selectedVariant" value="{{$product->variants[0]->id}}">
                             <div class="text-center buttons-wrap submit-btn-wrap">
                                 <button type="submit" class="g-btn f-btn border-btn mb-0 addToCart" data-variantId="{{$product->variants[0]->id}}">Add To Cart</button>
-                                <button type="submit" class="g-btn f-btn mb-0">Buy Now</button>
+                                <a href="{{route('user.checkout')}}" class="g-btn f-btn mb-0">Buy Now</a>
                             </div>
                             <div class="free-main-text">
                                 <p>Free delivery before 31st July 2023 <span class="star">*</span></p>
-                                <p>Category: <span class="b-text-category">{{$product->subCategory->category->name;}}</span> </p>
-                                <p>Sub Category: <span class="b-text-category">{{$product->subCategory->name}}</span> </p>
-                                <p>Brand: <span class="b-text-category">{{$product->brand->name}}</span> </p>
+                                {{-- <p>Category: <span class="b-text-category">{{$product->subCategory->category->name;}}</span> </p>
+                                <p>Sub Category: <span class="b-text-category">{{$product->subCategory->name}}</span> </p> --}}
+                                <p>Sold By: <span class="b-text-category">{{$product->brand->name}}</span> </p>
                             </div>
                         </div>
                         <div class="products-details-lists">
@@ -147,12 +147,12 @@
                                 <img src="{{asset($product->thumb_image)}}" alt="Product" />
                             </a>
                             <div class="product-like-cart">
-                                <a href="#" class="product-btn"><img src="{{asset('frontend')}}/assets/images/like-white.svg" alt="Like" /></a>
-                                <a href="#" class="product-btn"><img src="{{asset('frontend')}}/assets/images/cart-white.svg" alt="Cart" /></a>
+                                <a href="javascript:;" class="product-btn"><img src="{{asset('frontend')}}/assets/images/like-white.svg" alt="Like" /></a>
+                                <a href="javascript:;" class="product-btn addToCart"  data-variantId="{{$product->variants[0]->id}}"><img src="{{asset('frontend')}}/assets/images/cart-white.svg" alt="Cart" /></a>
                             </div>
                         </div>
                         <div class="products-detail">
-                            <a href="#">
+                            <a href="{{route('product-detail',$product->slug)}}">
                                 <h3>{{$product->name}}</h3>
                             </a>
                             <div class="products-price-rating">

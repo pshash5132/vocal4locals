@@ -20,12 +20,29 @@ class VendorDataTable extends DataTable
     public function dataTable(QueryBuilder $query): EloquentDataTable
     {
         return (new EloquentDataTable($query))
+        ->addColumn('status', function ($query) {
+            if ($query->status == 1) {
+                return '<label class="custom-switch mt-2">
+                <input type="checkbox" checked  name="custom-switch-checkbox" class="custom-switch-input change-status" data-id="' . $query->id . '">
+                <span class="custom-switch-indicator"></span>
+                </label>';
+            } else {
+                return '<label class="custom-switch mt-2">
+                <input type="checkbox"  name="custom-switch-checkbox" class="custom-switch-input change-status" data-id="' . $query->id . '">
+                <span class="custom-switch-indicator"></span>
+                </label>';
+            }
+
+
+        })
             ->addColumn('action', function ($query) {
                 $action = "<a href='" . route('admin.vendor-profile.edit', $query->id) . "' class='btn btn-primary'><i class='far fa-edit'></i></a>";
 
                 $delete = "<a href='" . route('admin.vendor-profile.destroy', $query->id) . "' class='btn btn-danger ml-2 delete-item'><i class='far fa-trash-alt'></i></a>";
                 return $action . $delete;
             })
+            ->rawColumns([ 'status', 'action'])
+
             ->setRowId('id');
     }
 
@@ -67,6 +84,7 @@ class VendorDataTable extends DataTable
         return [
             Column::make('id'),
             Column::make('name'),
+            Column::make('status'),
             Column::computed('action')
                 ->exportable(false)
                 ->printable(false)

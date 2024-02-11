@@ -60,6 +60,7 @@
                             <div class="text-center buttons-wrap">
                                 <button type="submit" class="g-btn f-btn mb-0">Register</button>
                                 <a href="{{route('home')}}" class="g-btn f-btn border-btn mb-0" style="margin: 0 !important">Cancel</a>
+                                <a href="{{route('login')}}" class="g-btn f-btn border-btn mb-0" style="margin: 0 !important">Login</a>
                             </div>
                         </form>
                     </div>

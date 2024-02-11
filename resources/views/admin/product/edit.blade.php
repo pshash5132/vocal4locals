@@ -15,7 +15,7 @@
 
                     </div>
                     <div class="card-body">
-                        <form method="POST" enctype="multipart/form-data" action="{{ route('admin.'.$folder.'.update',$data->id) }}">
+                        <form method="POST" id="product_form" enctype="multipart/form-data" action="{{ route('admin.'.$folder.'.update',$data->id) }}">
                             @csrf
                             @method('put')
 
@@ -31,7 +31,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Image (Max 2MB)(279px X 357px)</label>
-                                        <input name="image" type="file" class="form-control">
+                                        <input name="image_edit" type="file" class="form-control">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
@@ -42,7 +42,7 @@
                                     </div>
                                 </div>
 
-                                <div class="col-md-4">
+                                <div class="col-md-3">
                                     <div class="form-group">
                                         <label for="category">Category</label>
                                         <select name="category_id" id="category" class="form-control">
@@ -53,7 +53,7 @@
                                         </select>
                                     </div>
                                 </div>
-                                <div class="col-md-4">
+                                <div class="col-md-3">
                                     <div class="form-group">
                                         <label for="sub_category">Sub Category</label>
                                         <select name="subcategory_id" id="sub_category" class="form-control">
@@ -65,13 +65,24 @@
                                     </div>
                                 </div>
 
-                                <div class="col-md-4">
+                                <div class="col-md-3">
                                     <div class="form-group">
                                         <label for="brand">Brand</label>
                                         <select name="brand_id" id="brand" class="form-control">
                                             <option value="" disabled selected>Select Brand</option>
                                             @foreach ($brands as $brand)
                                                 <option {{$data->brand_id==$brand->id?'SELECTED':''}} value="{{$brand->id}}">{{$brand->name}}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label for="package">Package</label>
+                                        <select name="package_id" id="package" class="form-control">
+                                            <option value="" disabled selected>Select Package</option>
+                                            @foreach ($packages as $package)
+                                                <option {{$data->package_id==$package->id?'SELECTED':''}} value="{{$package->id}}">{{$package->name}}</option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -92,8 +103,8 @@
                                 </div> --}}
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label>Stock Quantity</label>
-                                        <input type="number" name="qty" min="0" value="{{$data->qty}}"
+                                        <label>Expected Delivery in days</label>
+                                        <input type="number" name="expected_delivery_days" min="0" value="{{$data->expected_delivery_days}}"
                                             class="form-control">
                                     </div>
                                 </div>

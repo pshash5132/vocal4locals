@@ -43,7 +43,7 @@
                                 <input name="instagram"  value="{{old('instagram')}}" type="text" class="form-control">
                             </div>
                             <div class="form-group">
-                                <label>Twitter</label>
+                                <label>LinkedIn</label>
                                 <input name="twitter"  value="{{old('twitter')}}" type="text" class="form-control">
                             </div>
                             <div class="form-group">

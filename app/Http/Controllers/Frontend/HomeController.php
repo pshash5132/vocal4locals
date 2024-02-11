@@ -4,9 +4,11 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Offer;
+use App\Models\PrivacyPolicy;
 use App\Models\Product;
 use App\Models\ServiceCategory;
 use App\Models\Slider;
+use App\Models\TermsAndConditions;
 
 class HomeController extends Controller
 {
@@ -51,6 +53,28 @@ class HomeController extends Controller
                 "top_products",
                 "services",
                 "offers"
+            ));
+    }
+    function pricacyPolicy(){
+        $data = PrivacyPolicy::first();
+        $notshowTouch =1;
+        $page = 'frontend.pages.privacy-policy';
+        return view('frontend.layouts.master',
+            compact(
+                "page",
+                "data",
+                "notshowTouch",
+            ));
+    }
+    function tAndC(){
+        $data = TermsAndConditions::first();
+        $page = 'frontend.pages.privacy-policy';
+        $notshowTouch = 1;
+        return view('frontend.layouts.master',
+            compact(
+                "page",
+                "data",
+                "notshowTouch"
             ));
     }
 }

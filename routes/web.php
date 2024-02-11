@@ -65,6 +65,8 @@ Route::middleware('rolecheck')->group(function () {
 
     Route::get('/collaborator', [CollaboratorController::class, 'index'])->name('collaborator');
     Route::post('/create-collaborator', [CollaboratorController::class, 'store'])->name('collaborator.add');
+    Route::get('/privacy-policy', [HomeController::class, 'pricacyPolicy'])->name('privacy-policy');
+    Route::get('/terms-and-conditions', [HomeController::class, 'tAndC'])->name('terms-and-conditions');
 });
 
 

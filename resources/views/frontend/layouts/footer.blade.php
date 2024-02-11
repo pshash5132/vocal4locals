@@ -35,10 +35,10 @@
                                         alt="Insta" /></a></li>
                             <li><a href="{{$company->facebook}}"><img src="{{ asset('frontend') }}/assets/images/fb.svg"
                                         alt="Facebook" /></a></li>
-                            <li><a href="{{$company->twitter}}"><img src="{{ asset('frontend') }}/assets/images/Twiter.svg"
+                            <li><a href="{{$company->twitter}}"><img src="{{ asset('frontend') }}/assets/images/linkedin.svg"
                                         alt="Twiter" /></a></li>
-                            <li><a href="{{$company->whatsapp}}"><img src="{{ asset('frontend') }}/assets/images/Pintrest.svg"
-                                        alt="Pintrest" /></a></li>
+                            <li><a href="{{$company->whatsapp}}"><img src="{{ asset('frontend') }}/assets/images/whatsapp.svg"
+                                        alt="whatsapp" /></a></li>
                         </ul>
                     </div>
                 </div>
@@ -50,8 +50,8 @@
                         <li><a href="{{route('home')}}">Home</a></li>
                         <li><a href="{{route('about')}}">About US</a></li>
                         <li><a href="{{route('contact')}}">Contact Us</a></li>
-                        <li><a href="#">Terms & Conditions</a></li>
-                        <li><a href="#">Privacy Notice</a></li>
+                        <li><a href="{{route('terms-and-conditions')}}">Terms & Conditions</a></li>
+                        <li><a href="{{route('privacy-policy')}}">Privacy Notice</a></li>
                     </ul>
                 </div>
             </div>

@@ -8,6 +8,7 @@ use App\Http\Requests\admin\ProductCreate as ProductCreateRequest;
 use App\Http\Requests\admin\ProductUpdate;
 use App\Models\Brand;
 use App\Models\Category;
+use App\Models\Package;
 use App\Models\Product;
 use App\Models\ProductImageGallery;
 use App\Models\ProductVariant;
@@ -37,11 +38,12 @@ class ProductController extends Controller
      */
     public function create()
     {
-        $categories = Category::all();
-        $brands = Brand::all();
+        $categories = Category::where('status','1')->get();
+        $brands = Brand::where('status','1')->get();
+        $packages = Package::all();
         $folder = $this->folder;
         $page = $folder . '.create';
-        return view('admin.layouts.master', compact('page', 'folder', 'categories', 'brands'));
+        return view('admin.layouts.master', compact('page', 'folder', 'categories', 'brands','packages'));
     }
 
     /**
@@ -55,10 +57,11 @@ class ProductController extends Controller
         $insert->vendor_id = Auth::user()->vendor->id;
         $insert->brand_id = $request->brand_id;
         $insert->subcategory_id = $request->subcategory_id;
+        $insert->package_id = $request->package_id;
         $insert->name = $request->name;
         $insert->slug = Str::slug($request->name);
         $insert->thumb_image = $imagePath;
-        $insert->qty = $request->qty;
+        $insert->expected_delivery_days = $request->expected_delivery_days;
         $insert->short_description = $request->short_description;
         $insert->long_description = $request->long_description;
         $insert->video_link = $request->video_link;
@@ -93,12 +96,14 @@ class ProductController extends Controller
     {
         $data = Product::findOrFail($id);
         $sub_category = SubCategory::find($data->subcategory_id);
+        $packages = Package::all();
+
         $sub_categories = SubCategory::where('category_id', $sub_category->category_id)->get();
-        $categories = Category::all();
-        $brands = Brand::all();
+        $categories = Category::where('status','1')->get();
+        $brands = Brand::where('status','1')->get();
         $folder = $this->folder;
         $page = $this->folder . '.edit';
-        return view('admin.layouts.master', compact('page', 'data', 'folder', 'categories', 'brands', 'sub_categories', 'sub_category'));
+        return view('admin.layouts.master', compact('page', 'data', 'folder', 'categories', 'brands', 'sub_categories', 'sub_category','packages'));
     }
 
     /**
@@ -107,14 +112,15 @@ class ProductController extends Controller
     public function update(ProductUpdate $request, string $id)
     {
         $update = Product::findOrFail($id);
-        $imagePath = $this->uploadImage($request, 'image', 'uploads/products', $update->thumb_image);
+        $imagePath = $this->uploadImage($request, 'image_edit', 'uploads/products', $update->thumb_image);
         $update->vendor_id = Auth::user()->vendor->id;
         $update->brand_id = $request->brand_id;
         $update->subcategory_id = $request->subcategory_id;
+        $update->package_id = $request->package_id;
         $update->name = $request->name;
         $update->slug = Str::slug($request->name);
         $update->thumb_image = $imagePath;
-        $update->qty = $request->qty;
+        $update->expected_delivery_days = $request->expected_delivery_days;
         $update->short_description = $request->short_description;
         $update->long_description = $request->long_description;
         $update->video_link = $request->video_link;

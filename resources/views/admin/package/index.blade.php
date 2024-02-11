@@ -28,26 +28,5 @@
     </div>
     @push('scripts')
         {{ $dataTable->scripts(attributes: ['type' => 'module']) }}
-        <script>
-            $(document).ready(function(){
-                $('body').on('click','.change-status',function(){
-                    let isChecked = $(this).is(':checked');
-                    let id = $(this).data('id')
-                    $.ajax({
-                            type: 'PUT',
-                            url: "{{route('admin.vendor-profile.changeStatus')}}",
-                            data:{
-                                status:isChecked,id
-                            },
-                            success: function(res) {
-                                toastr.success(res.message)
-                            },
-                            error: function(xhr, status, error) {
-                                console.log(error)
-                            }
-                        })
-                })
-            })
-        </script>
     @endpush
 </section>

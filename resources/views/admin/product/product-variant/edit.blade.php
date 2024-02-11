@@ -28,7 +28,7 @@
                                 <input type="hidden" name="product_id" value="{{$data->product_id}}" />
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label>Item Name</label>
+                                        <label>Variant Name</label>
                                         <input type="text" name="name" value="{{ $data->name }}"
                                             class="form-control">
                                     </div>

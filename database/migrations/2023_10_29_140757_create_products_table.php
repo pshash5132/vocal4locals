@@ -19,7 +19,6 @@ return new class extends Migration
             $table->string('name');
             $table->string('slug');
             $table->string('thumb_image');
-            $table->integer('qty')->nullable();
             $table->text('short_description');
             $table->text('long_description');
             $table->text('video_link')->nullable();

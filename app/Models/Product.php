@@ -23,6 +23,10 @@ class Product extends Model
     {
         return $this->belongsTo(SubCategory::class, 'subcategory_id');
     }
+    public function package()
+    {
+        return $this->belongsTo(Package::class);
+    }
 
     public function vendor()
     {

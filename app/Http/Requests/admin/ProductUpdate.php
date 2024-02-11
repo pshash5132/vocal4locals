@@ -22,7 +22,7 @@ class ProductUpdate extends FormRequest
     public function rules(): array
     {
         return [
-            'image' => ['nullable', 'image', 'max:3000'],
+            'image_edit' => ['nullable', 'image', 'max:3000'],
             'name' => ['required', 'string', 'max:200'],
             'category_id' => ['required'],
             'subcategory_id' => ['required'],

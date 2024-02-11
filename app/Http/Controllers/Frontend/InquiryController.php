@@ -32,7 +32,7 @@ class InquiryController extends Controller
             'location' => ['required', 'string', 'max:200'],
             'check_in' => ['required', 'string', 'max:200'],
             'check_out' => ['required', 'string', 'max:200'],
-            'budget' => ['required', 'max:20'],
+            // 'budget' => ['required', 'max:20'],
         ]);
         // dd(implode(',', $req->children_age));
         $inquiry = new HotelInquiry();
@@ -40,7 +40,7 @@ class InquiryController extends Controller
         $inquiry->location = $req->location;
         $inquiry->check_in = $req->check_in;
         $inquiry->check_out = $req->check_out;
-        $inquiry->budget = $req->budget;
+        // $inquiry->budget = $req->budget;
         $inquiry->rooms = $req->room_qty;
         $inquiry->adults = $req->adult_qty;
         $inquiry->childrens = $req->child_qty;
@@ -57,7 +57,9 @@ class InquiryController extends Controller
             'to_location' => ['required', 'string', 'max:200'],
             'departure' => ['required', 'string', 'max:200'],
             'return' => ['required', 'string', 'max:200'],
-            'budget' => ['required', 'max:20'],
+            'drive_type' => ['required', 'string', 'max:200'],
+            'total_persons' => ['required', 'integer','max:25'],
+            // 'budget' => ['required', 'max:20'],
         ]);
         // dd($req->all());
 
@@ -67,7 +69,8 @@ class InquiryController extends Controller
         $inquiry->to_location = $req->to_location;
         $inquiry->departure = $req->departure;
         $inquiry->return = $req->return;
-        $inquiry->budget = $req->budget;
+        $inquiry->total_persons = $req->total_persons;
+        $inquiry->drive_type = $req->drive_type;
         $inquiry->save();
         toastr('Inquiry created successfully!');
         return redirect()->back();

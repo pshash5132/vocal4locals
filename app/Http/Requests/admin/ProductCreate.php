@@ -27,7 +27,7 @@ class ProductCreate extends FormRequest
             'category_id' => ['required'],
             'subcategory_id' => ['required'],
             'brand_id' => ['required'],
-            // 'price' => ['required'],
+            'package_id' => ['required'],
             'short_description' => ['required', 'max:600'],
             'long_description' => ['required'],
             'product_type' => ['required'],

@@ -25,7 +25,7 @@ return new class extends Migration
             $table->integer('adults');
             $table->integer('childrens');
             $table->string('childrens_age');
-            $table->double('budget');
+            $table->double('budget')->nullable();
             $table->enum('status', ['1', '2', '3', '4', '5'])->default('1')->comment('1=>new,2=>pending,3=>booked,4=>not available,5=>cancelled');
             $table->timestamps();
             $table->index('user_id');

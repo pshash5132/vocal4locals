@@ -30,9 +30,11 @@
 </head>
 
 <body>
-
     @include('frontend.layouts.header')
+    @if ($page!='frontend.pages.privacy-policy')
+
     @include('frontend.layouts.menu')
+    @endif
     @yield('content')
 
     <!-- get-in-touch-section -->

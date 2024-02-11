@@ -11,6 +11,8 @@ use App\Http\Controllers\Backend\InquiryController;
 use App\Http\Controllers\Backend\InquirySliderController;
 use App\Http\Controllers\Backend\OfferController;
 use App\Http\Controllers\Backend\OrderController;
+use App\Http\Controllers\Backend\PackageController;
+use App\Http\Controllers\Backend\PrivacyPolicyController;
 use App\Http\Controllers\Backend\ProductController;
 use App\Http\Controllers\Backend\ProductImageGalleryController;
 use App\Http\Controllers\Backend\ProductVariantController;
@@ -21,6 +23,7 @@ use App\Http\Controllers\Backend\ShippingRuleController;
 use App\Http\Controllers\Backend\SiteInfoController;
 use App\Http\Controllers\Backend\SliderController;
 use App\Http\Controllers\Backend\SubCategoryController;
+use App\Http\Controllers\Backend\TermsAndConditionsController;
 use Illuminate\Support\Facades\Route;
 
 /** admin Routes  */
@@ -64,6 +67,8 @@ Route::put('shipping-rule-changeStatus', [ShippingRuleController::class, 'change
 Route::resource('shipping-rule', ShippingRuleController::class);
 
 //items
+Route::resource('package', PackageController::class);
+
 Route::get('products-variant/{product}', [ProductVariantController::class, 'index'])->name('products-variant.index');
 Route::get('products-variant', [ProductVariantController::class, 'create'])->name('products-variant.create');
 Route::post('products-variant', [ProductVariantController::class, 'store'])->name('products-variant.store');
@@ -73,6 +78,7 @@ Route::put('products-variant', [ProductVariantController::class, 'changeStatus']
 Route::delete('products-variant/{id}', [ProductVariantController::class, 'destroy'])->name('products-variant.destroy');
 
 //e-commerce
+Route::put('vendor-profile-changeStatus', [AdminVendorProfileController::class, 'changeStatus'])->name('vendor-profile.changeStatus');
 Route::resource('vendor-profile', AdminVendorProfileController::class);
 
 Route::resource('coupons', CouponController::class);
@@ -90,3 +96,6 @@ Route::put('offer-changeStatus', [OfferController::class, 'changeStatus'])->name
 Route::resource('order', OrderController::class);
 Route::get('order-status',[OrderController::class,'changeOrderStatus'])->name('order.status');
 Route::get('payment-status',[OrderController::class,'changePaymentStatus'])->name('order.paymentstatus');
+
+Route::resource('terms-and-conditions', TermsAndConditionsController::class);
+Route::resource('privacy-policies', PrivacyPolicyController::class);

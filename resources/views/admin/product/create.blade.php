@@ -15,7 +15,7 @@
 
                     </div>
                     <div class="card-body">
-                        <form method="POST" enctype="multipart/form-data"
+                        <form method="POST" enctype="multipart/form-data" id="product_form"
                             action="{{ route('admin.' . $folder . '.store') }}">
                             @csrf
                             <div class="row">
@@ -33,7 +33,7 @@
                                     </div>
                                 </div>
 
-                                <div class="col-md-4">
+                                <div class="col-md-3">
                                     <div class="form-group">
                                         <label for="category">Category</label>
                                         <select name="category_id" id="category" class="form-control">
@@ -44,7 +44,7 @@
                                         </select>
                                     </div>
                                 </div>
-                                <div class="col-md-4">
+                                <div class="col-md-3">
                                     <div class="form-group">
                                         <label for="sub_category">Sub Category</label>
                                         <select name="subcategory_id" id="sub_category" class="form-control">
@@ -53,13 +53,25 @@
                                     </div>
                                 </div>
 
-                                <div class="col-md-4">
+                                <div class="col-md-3">
                                     <div class="form-group">
                                         <label for="brand">Brand</label>
                                         <select name="brand_id" id="brand" class="form-control">
                                             <option value="" disabled selected>Select Brand</option>
                                             @foreach ($brands as $brand)
                                                 <option value="{{$brand->id}}">{{$brand->name}}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label for="package">Package</label>
+                                        <select name="package_id" id="package" class="form-control">
+                                            <option value="" disabled selected>Select Package</option>
+                                            @foreach ($packages as $package)
+                                                <option value="{{$package->id}}">{{$package->name}}</option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -80,8 +92,8 @@
                                 </div> --}}
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label>Stock Quantity</label>
-                                        <input type="number" name="qty" min="0" value="{{ old('qty') }}"
+                                        <label>Expected Delivery in days</label>
+                                        <input type="number" name="expected_delivery_days" min="0" value="{{ old('expected_delivery_days') }}"
                                             class="form-control">
                                     </div>
                                 </div>
@@ -124,9 +136,11 @@
                                         <label for="product_type">Product Type</label>
                                         <select name="product_type" id="product_type" class="form-control">
                                             <option value="0">Select</option>
+                                            @if (Auth::user()->role == 'admin')
                                             <option value="new_arrival">New Arrival</option>
                                             <option value="fatured_product">Fetured</option>
                                             <option value="top_product">Top Product</option>
+                                            @endif
                                             <option value="best_product">Best Product</option>
                                         </select>
                                     </div>

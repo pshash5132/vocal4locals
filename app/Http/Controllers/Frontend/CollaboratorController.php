@@ -3,10 +3,12 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Mail\VenderRegister;
 use App\Models\User;
 use App\Models\Vendor;
 use Illuminate\Http\Request;
 use App\Traits\ImageUploadTrait;
+use Illuminate\Support\Facades\Mail;
 
 class CollaboratorController extends Controller
 {
@@ -54,6 +56,7 @@ class CollaboratorController extends Controller
         $insert->user_id = $user->id;
         $insert->save();
         toastr('Vendor Created successfully', 'success');
+        Mail::to($request->email)->send(new VenderRegister($request));
         return redirect()->route('home');
     }
 }

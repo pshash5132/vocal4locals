@@ -60,7 +60,9 @@
                 'admin.inquirySlider.*',
                 'admin.about.*',
                 'admin.companyDetail.*',
-                'admin.siteInfo.*'
+                'admin.siteInfo.*',
+                'admin.privacy-policies.*',
+                'admin.terms-and-conditions.*'
                 ])}}">
                 <a href="javascript:;" class="nav-link has-dropdown" data-toggle="dropdown"><i
                         class="fas fa-columns"></i> <span>Manage Website</span></a>
@@ -81,6 +83,14 @@
                     <li class="{{setActive([
                     'admin.siteInfo.index'
                     ])}}"><a class="nav-link" href="{{route('admin.siteInfo.index')}}">Site Info Details</a>
+                    </li>
+                    <li class="{{setActive([
+                    'admin.privacy-policies.*'
+                    ])}}"><a class="nav-link" href="{{route('admin.privacy-policies.index')}}">Privacy Policy</a>
+                    </li>
+                    <li class="{{setActive([
+                    'admin.terms-and-conditions.*'
+                    ])}}"><a class="nav-link" href="{{route('admin.terms-and-conditions.index')}}">Terms and Conditions</a>
                     </li>
 
                 </ul>
@@ -125,9 +135,11 @@
 
                 </ul>
             </li>
+
             <li class="dropdown {{setActive([
                 'admin.category.*',
                 'admin.sub-category.*',
+                'admin.package.*',
                 ])}}">
                 <a href="javascript:;" class="nav-link has-dropdown" data-toggle="dropdown"><i
                         class="fas fa-columns"></i> <span>Manage Categories</span></a>
@@ -140,7 +152,10 @@
                         'admin.sub-category.*',
                         ])}}"><a class="nav-link" href="{{route('admin.sub-category.index')}}">Sub Category</a>
                     </li>
-
+                    <li class="{{setActive([
+                        'admin.package.*',
+                        ])}}"><a class="nav-link" href="{{route('admin.package.index')}}">Package</a>
+                    </li>
 
                 </ul>
             </li>
@@ -201,11 +216,11 @@
                 </ul>
             </li> --}}
 
-            <li>
+            {{-- <li>
                 <a class="nav-link" href="blank.html"><i class="far fa-square"></i> <span>Blank
                         Page</span>
                     </a>
-                    </li>
+                    </li> --}}
 
         </ul>
 

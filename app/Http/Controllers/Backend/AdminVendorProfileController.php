@@ -9,6 +9,10 @@ use App\Models\Vendor;
 use App\Traits\ImageUploadTrait;
 use Illuminate\Http\Request;
 use Auth;
+use App\Mail\VenderRegisterConfirmation;
+
+use Illuminate\Support\Facades\Mail;
+
 class AdminVendorProfileController extends Controller
 {
     /**
@@ -153,5 +157,20 @@ class AdminVendorProfileController extends Controller
         $this->deleteImage($vendor->logo);
         $vendor->delete();
         return response(['status' => '1', 'message' => 'Deleted Successfully']);
+    }
+
+    public function changeStatus(Request $request)
+    {
+        $data = Vendor::findOrFail($request->id);
+        $data->status = $request->status == 'true' ? 1 : 0;
+        $data->save();
+        // dd($data->email)
+        if($data->status==1){
+
+            Mail::to($data->email)->send(new VenderRegisterConfirmation($data));
+        }
+
+        return response(['status' => '1', 'message' => 'Status Updated Successfully']);
+
     }
 }

@@ -41,12 +41,12 @@ class InquirySliderController extends Controller
 
         $request->validate([
             'banner' => ['required', 'image', 'max:2000'],
-            'type' => ['string', 'max:200'],
-            'title' => ['required', 'string', 'max:200'],
-            'starting_price' => ['max:200'],
-            'btn_url' => ['url'],
-            'serial' => ['required', 'integer'],
-            'status' => ['required'],
+            // 'type' => ['string', 'max:200'],
+            // 'title' => ['required', 'string', 'max:200'],
+            // 'starting_price' => ['max:200'],
+            // 'btn_url' => ['url'],
+            // 'serial' => ['required', 'integer'],
+            // 'status' => ['required'],
         ]);
         $slider = new InquirySlider();
         // handle file upload
@@ -60,7 +60,7 @@ class InquirySliderController extends Controller
         $slider->status = $request->status;
         $slider->save();
         toastr('Created successfully!');
-        return redirect()->back();
+        return redirect()->route('admin.inquirySlider.index');
     }
 
     /**
@@ -89,12 +89,12 @@ class InquirySliderController extends Controller
     {
         $request->validate([
             'banner' => ['nullable', 'image', 'max:2000'],
-            'type' => ['string', 'max:200'],
-            'title' => ['required', 'string', 'max:200'],
-            'starting_price' => ['max:200'],
-            'btn_url' => ['url'],
-            'serial' => ['required', 'integer'],
-            'status' => ['required'],
+            // 'type' => ['string', 'max:200'],
+            // 'title' => ['required', 'string', 'max:200'],
+            // 'starting_price' => ['max:200'],
+            // 'btn_url' => ['url'],
+            // 'serial' => ['required', 'integer'],
+            // 'status' => ['required'],
         ]);
         $slider = InquirySlider::findOrFail($id);
         // handle file upload

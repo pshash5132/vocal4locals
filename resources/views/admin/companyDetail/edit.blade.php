@@ -49,7 +49,7 @@
                                 <input name="instagram"  value="{{$data->instagram}}" type="url" class="form-control">
                             </div>
                             <div class="form-group">
-                                <label>Twitter</label>
+                                <label>LinkedIn</label>
                                 <input name="twitter"  value="{{$data->twitter}}" type="url" class="form-control">
                             </div>
                             <div class="form-group">

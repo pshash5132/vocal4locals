@@ -30,7 +30,7 @@
                                 <input type="hidden" name="product_id" value="{{$product->id}}" />
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label>Item Name</label>
+                                        <label>Variant Name</label>
                                         <input type="text" name="name" value="{{ old('name') }}"
                                             class="form-control">
                                     </div>

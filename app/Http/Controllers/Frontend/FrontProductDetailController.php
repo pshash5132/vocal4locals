@@ -107,7 +107,7 @@ class FrontProductDetailController extends Controller
     public function showDetail(string $slug)
     {
 
-        $product = Product::with('productImageGallery', 'subCategory', 'variants', 'brand')->where('slug', $slug)->where('status', '1')->where('is_approved', 1)->first();
+        $product = Product::with('productImageGallery', 'subCategory', 'variants', 'brand', 'package')->where('slug', $slug)->where('status', '1')->where('is_approved', 1)->first();
         $related_products = Product::with('productImageGallery', 'subCategory', 'variants', 'brand')->where('status', '1')->where('is_approved', 1)->where('subcategory_id', $product->subcategory_id)->where('id', '!=', $product->id)->get();
 
         // dd($product->toSql(), $product->getBindings());

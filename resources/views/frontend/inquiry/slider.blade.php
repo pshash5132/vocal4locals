@@ -6,7 +6,12 @@
                     <div class="banner-slider-content">
                         <h2>{!! $slider->type !!} </h2>
                         <h3>{!! $slider->title !!}</h3>
-                        <p>{!! $slider->starting_price !!}</p>
+                       @if ($slider->starting_price!='')
+
+                       <p>
+                           {!! $slider->starting_price !!}
+                       </p>
+                       @endif
                         {{-- <a href="{{ $slider->btn_url }}" class="cmn-btn buy-now">Buy Now!</a> --}}
                     </div>
                     <img src="{{ $slider->banner }}" alt="Banne" />
@@ -150,11 +155,11 @@
                                                 value="1 Adult, 0 Child, 1 Room">
                                         </div>
                                     </div>
-                                    <div class="form-group">
+                                    {{-- <div class="form-group">
                                         <label for="">Your Budget</label>
                                         <input type="text" name="budget" value="{{ old('budget') }}"
                                             class="form-control budget" placeholder="₹ 1500" />
-                                    </div>
+                                    </div> --}}
 
 
                                     <div class="text-center buttons-wrap">
@@ -202,7 +207,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="form-group">
+                                    {{-- <div class="form-group">
                                         <label for="">Your Budget</label>
 
                                         <div class="">
@@ -210,7 +215,28 @@
                                                 class="form-control budget" placeholder="₹ 1500" />
                                         </div>
 
+                                    </div> --}}
+                                    <div class="form-group">
+                                        <label for="">Drive Type</label>
+
+                                        <div class="">
+                                            <select name="drive_type" class="form-control">
+                                                <option value="Self Drive">Self Drive</option>
+                                                <option value="With Driver">With Driver</option>
+                                            </select>
+                                        </div>
+
                                     </div>
+                                    <div class="form-group">
+                                        <label for="">Total Persons</label>
+
+                                        <div class="">
+                                            <input name="total_persons" type="text" value="{{ old('total_persons') }}"
+                                                class="form-control budget" placeholder="1" />
+                                        </div>
+
+                                    </div>
+
                                     <div class="text-center buttons-wrap">
                                         <button type="submit" class="g-btn f-btn mb-0">Inquiry Now!</button>
                                     </div>
@@ -392,21 +418,21 @@ $("#apply_travellers").click(function(){
             location: "required",
             check_in: "required",
             check_out: "required",
-            budget: {
-                required: true,
-                number: true, // Should be a valid number
-                max: 100000 // Maximum budget of 1 lakh
-            }
+            // budget: {
+            //     required: true,
+            //     number: true, // Should be a valid number
+            //     max: 100000 // Maximum budget of 1 lakh
+            // }
         },
         messages: {
             location: "Please enter a location",
             check_in: "Please enter a check-in date",
             check_out: "Please enter a check-out date",
-            budget: {
-                required: "Please enter your budget",
-                number: "Please enter a valid number",
-                max: "Maximum budget allowed is 1 lakh"
-            }
+            // budget: {
+            //     required: "Please enter your budget",
+            //     number: "Please enter a valid number",
+            //     max: "Maximum budget allowed is 1 lakh"
+            // }
         },
         submitHandler: function (form) {
             form.submit();
@@ -432,22 +458,22 @@ $("#apply_travellers").click(function(){
             to_location: "required",
             departure: "required",
             return: "required",
-            budget: {
-                required: true,
-                number: true,
-                max: 100000 // Maximum budget of 1 lakh
-            }
+            // budget: {
+            //     required: true,
+            //     number: true,
+            //     max: 100000 // Maximum budget of 1 lakh
+            // }
         },
         messages: {
             from_location: "Please enter the starting location",
             to_location: "Please enter the destination",
             departure: "Please enter the departure date",
             return: "Please enter the return date",
-            budget: {
-                required: "Please enter your budget",
-                number: "Please enter a valid number",
-                max: "Maximum budget allowed is 1 lakh"
-            }
+            // budget: {
+            //     required: "Please enter your budget",
+            //     number: "Please enter a valid number",
+            //     max: "Maximum budget allowed is 1 lakh"
+            // }
         },
         submitHandler: function (form) {
             form.submit();
