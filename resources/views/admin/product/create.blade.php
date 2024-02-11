@@ -125,7 +125,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Video Link</label>
-                                        <input type="text" name="video_link" min="0" value="{{ old('video_link') }}"
+                                        <input type="text" name="video_link"  value="{{ old('video_link') }}"
                                             class="form-control">
                                     </div>
                                 </div>
@@ -160,7 +160,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>SEO Title</label>
-                                        <input type="text" name="seo_title" min="0" value="{{ old('seo_title') }}"
+                                        <input type="text" name="seo_title" value="{{ old('seo_title') }}"
                                             class="form-control">
                                     </div>
                                 </div>

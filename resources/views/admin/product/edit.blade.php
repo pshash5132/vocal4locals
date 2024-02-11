@@ -136,7 +136,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Video Link</label>
-                                        <input type="text" name="video_link" min="0" value="{{$data->video_link}}"
+                                        <input type="text" name="video_link" value="{{$data->video_link}}"
                                             class="form-control">
                                     </div>
                                 </div>
@@ -146,10 +146,12 @@
                                     <div class="form-group">
                                         <label for="product_type">Product Type</label>
                                         <select name="product_type" id="product_type" class="form-control">
-                                            <option value="0">Select</option>
+                                            <option value="">Select</option>
+                                            @if (Auth::user()->role == 'admin')
                                             <option {{$data->product_type == "new_arrival"?"SELECTED":""}} value="new_arrival">New Arrival</option>
                                             <option {{$data->product_type == "fatured_product"?"SELECTED":""}} value="fatured_product">Fetured</option>
                                             <option {{$data->product_type == "top_product"?"SELECTED":""}} value="top_product">Top Product</option>
+                                            @endif
                                             <option {{$data->product_type == "best_product"?"SELECTED":""}} value="best_product">Best Product</option>
                                         </select>
                                     </div>
@@ -169,7 +171,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>SEO Title</label>
-                                        <input type="text" name="seo_title" min="0" value="{{$data->seo_title}}"
+                                        <input type="text" name="seo_title"  value="{{$data->seo_title}}"
                                             class="form-control">
                                     </div>
                                 </div>

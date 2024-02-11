@@ -48,10 +48,6 @@
                 sku: {
                     required: true
                 },
-                qty: {
-                    required: true,
-                    min: 0
-                },
                 offer_start_date: {
                     required: true
                 },
@@ -83,10 +79,6 @@
                 subcategory_id: "Please select a subcategory",
                 brand_id: "Please select a brand",
                 sku: "Please enter SKU",
-                qty: {
-                    required: "Please enter stock quantity",
-                    min: "Stock quantity must be greater than or equal to 0"
-                },
                 offer_start_date: "Please select offer start date",
                 offer_end_date: "Please select offer end date",
                 product_type: "Please select product type",
