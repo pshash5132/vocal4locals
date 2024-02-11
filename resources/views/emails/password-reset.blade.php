@@ -44,10 +44,10 @@
                                 <td>
                                     <div class="social-media-wrap" style="margin-bottom: 10px;">
                                         <ul>
-                                            <li><a href="#" style="width: 35px; height: 35px; padding: 7px;border-radius: 50%; background: #5264AE; margin: 0 7px;"><img src="{{asset('frontend/assets')}}/images/instagram.png" alt="Insta" style="filter: brightness(0) invert(1); position: relative; "></a></li>
-                                            <li><a href="#" style="width: 35px; height: 35px; padding: 7px;border-radius: 50%; background: #5264AE; margin: 0 7px;"><img src="{{asset('frontend/assets')}}/images/facebook.png" alt="Facebook" style="filter: brightness(0) invert(1); position: relative; "></a></li>
-                                            <li><a href="#" style="width: 35px; height: 35px; padding: 7px;border-radius: 50%; background: #5264AE; margin: 0 7px;"><img src="{{asset('frontend/assets')}}/images/linkedin.png" alt="Twiter" style="filter: brightness(0) invert(1); position: relative; "></a></li>
-                                            <li><a href="#" style="width: 35px; height: 35px; padding: 7px;border-radius: 50%; background: #5264AE; margin: 0 7px;"><img src="{{asset('frontend/assets')}}/images/whatsapp.png" alt="Pintrest" style="filter: brightness(0) invert(1); position: relative; "></a></li>
+                                            <li><a href="#" style="width: 35px; height: 35px; padding: 7px;border-radius: 50%; background: #5264AE; margin: 0 7px;"><img style="width: 35px; height: 35px;" src="{{asset('frontend/assets')}}/images/instagram.png" alt="Insta" style="filter: brightness(0) invert(1); position: relative; "></a></li>
+                                            <li><a href="#" style="width: 35px; height: 35px; padding: 7px;border-radius: 50%; background: #5264AE; margin: 0 7px;"><img style="width: 35px; height: 35px;" src="{{asset('frontend/assets')}}/images/facebook.png" alt="Facebook" style="filter: brightness(0) invert(1); position: relative; "></a></li>
+                                            <li><a href="#" style="width: 35px; height: 35px; padding: 7px;border-radius: 50%; background: #5264AE; margin: 0 7px;"><img style="width: 35px; height: 35px;" src="{{asset('frontend/assets')}}/images/linkedin.png" alt="Twiter" style="filter: brightness(0) invert(1); position: relative; "></a></li>
+                                            <li><a href="#" style="width: 35px; height: 35px; padding: 7px;border-radius: 50%; background: #5264AE; margin: 0 7px;"><img style="width: 35px; height: 35px;" src="{{asset('frontend/assets')}}/images/whatsapp.png" alt="Pintrest" style="filter: brightness(0) invert(1); position: relative; "></a></li>
                                         </ul>
                                     </div>
                                 </td>
