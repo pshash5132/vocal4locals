@@ -4,7 +4,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="terms-of-use-wrap">
-                        {!! $data->content !!}
+                        {!! @$data->content !!}
                     </div>
                 </div>
             </div>
