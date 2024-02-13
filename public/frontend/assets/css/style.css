@@ -3411,7 +3411,7 @@ button:focus:not(:focus-visible) {
 }
 .hotel-tab-wrap {
     position: absolute;
-    bottom: 90px;
+    bottom: 0px;
     z-index: 1;
     left: 0;
     right: 0;
