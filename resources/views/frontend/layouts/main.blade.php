@@ -444,12 +444,12 @@
                 },
                 postalcode: {
                     required: true,
-                    digits: true,
+                    number: true,
                     minlength: 6
                 },
                 contact: {
                     required: true,
-                    digits: true,
+                    number: true,
                     minlength: 10
                 }
             },
