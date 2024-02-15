@@ -38,15 +38,13 @@
             <div class="col-lg-6">
                 <div class="form-group">
                     <label for="">Postal Code*</label>
-                    <input type="number" class="form-control"  name="postalcode" placeholder="380081" pattern="/^-?\d+\.?\d*$/"
-                      />
+                    <input type="number" class="form-control"  name="postalcode" placeholder="380081"/>
                 </div>
             </div>
             <div class="col-lg-6">
                 <div class="form-group">
                     <label for="">Contact Number*</label>
-                    <input type="number" class="form-control" name="contact" placeholder="98980 98009" pattern="/^-?\d+\.?\d*$/"
-                      />
+                    <input type="number" class="form-control" name="contact" placeholder="98980 98009"/>
                 </div>
             </div>
         </div>
