@@ -51,6 +51,7 @@
                 offer_start_date: {
                     required: true
                 },
+
                 offer_end_date: {
                     required: true
                 },
@@ -72,6 +73,7 @@
                     required: "Please select an image file",
                     accept: "Please upload only image files"
                 },
+
                 name: "Please enter the name",
                 category_id: "Please select a category",
                 expected_delivery_days: "Please enter expected delivery days",

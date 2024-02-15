@@ -3,6 +3,7 @@
 
 use App\Models\Category;
 use App\Models\SiteInfo;
+use Carbon\Carbon;
 
 function setActive(array $routes)
 {
@@ -103,4 +104,34 @@ function getMainCartDiscount()
     } else {
         return 0;
     }
+}
+
+function getFormattedShippingTimeAttribute($shipping_time)
+{
+    // Get the current time
+    $currentTime = Carbon::now();
+
+    // If the current time is after 5 PM, consider tomorrow as the shipping day
+    if ($currentTime->hour >= 17) {
+        $shippingDate = $currentTime->addDay();
+    } else {
+        $shippingDate = $currentTime;
+    }
+
+    // Calculate the delivery time based on the provided shipping time
+    $deliveryTime = $shippingDate->copy()->addHours($shipping_time);
+
+    // If the delivery time is within the delivery hours (10 AM to 5 PM), display delivery for today
+    if ($deliveryTime->hour >= 10 && $deliveryTime->hour < 17) {
+        $formattedTime = "Today before 5 PM";
+    } else {
+        // If the delivery time is after the delivery hours, display delivery for tomorrow
+        $formattedTime = "Tomorrow before 5 PM";
+    }
+
+    // If shipping time is in days, display delivery date accordingly
+    if ($shipping_time >= 24) {
+        $formattedTime = $deliveryTime->format('l, F jS') . " before 5 PM";
+    }
+    return $formattedTime;
 }

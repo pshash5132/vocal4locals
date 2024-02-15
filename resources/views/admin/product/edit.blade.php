@@ -101,13 +101,7 @@
                                             class="form-control">
                                     </div>
                                 </div> --}}
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label>Expected Delivery in days</label>
-                                        <input type="number" name="expected_delivery_days" min="0" value="{{$data->expected_delivery_days}}"
-                                            class="form-control">
-                                    </div>
-                                </div>
+
                                 {{-- <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Offer-Price</label>
@@ -156,7 +150,32 @@
                                         </select>
                                     </div>
                                 </div>
-
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="inputState">Shipping time</label>
+                                        <select name="expected_delivery_days" id="expected_delivery_days"  class="form-control">
+                                            <option value="" selected disabled>Select shpping time</option>
+                                            <option {{$data->expected_delivery_days == "2"?"SELECTED":""}} value="2">2 Hours</option>
+                                            <option {{$data->expected_delivery_days == "4"?"SELECTED":""}} value="4">4 Hours</option>
+                                            <option {{$data->expected_delivery_days == "6"?"SELECTED":""}} value="6">6 Hours</option>
+                                            <option {{$data->expected_delivery_days == "8"?"SELECTED":""}} value="8">8 Hours</option>
+                                            <option {{$data->expected_delivery_days == "12"?"SELECTED":""}} value="12">12 Hours</option>
+                                            <option {{$data->expected_delivery_days == "24"?"SELECTED":""}} value="24">1 Day</option>
+                                            <option {{$data->expected_delivery_days == "36"?"SELECTED":""}} value="36">1.5 Days</option>
+                                            <option {{$data->expected_delivery_days == "48"?"SELECTED":""}} value="48">2 Days</option>
+                                            <option {{$data->expected_delivery_days == "60"?"SELECTED":""}} value="60">2.5 Days</option>
+                                            <option {{$data->expected_delivery_days == "72"?"SELECTED":""}} value="72">3 Days</option>
+                                            <option {{$data->expected_delivery_days == "84"?"SELECTED":""}} value="84">3.5 Days</option>
+                                            <option {{$data->expected_delivery_days == "96"?"SELECTED":""}} value="96">4 Days</option>
+                                            <option {{$data->expected_delivery_days == "108"?"SELECTED":""}} value="108">4.5 Days</option>
+                                            <option {{$data->expected_delivery_days == "120"?"SELECTED":""}} value="120">5 Days</option>
+                                            <option {{$data->expected_delivery_days == "132"?"SELECTED":""}} value="132">5.5 Days</option>
+                                            <option {{$data->expected_delivery_days == "144"?"SELECTED":""}} value="144">6 Days</option>
+                                            <option {{$data->expected_delivery_days == "156"?"SELECTED":""}} value="156">6.5 Days</option>
+                                            <option {{$data->expected_delivery_days == "168"?"SELECTED":""}} value="168">7 Days</option>
+                                        </select>
+                                    </div>
+                                </div>
 
                                 <div class="col-md-6">
                                     <div class="form-group">

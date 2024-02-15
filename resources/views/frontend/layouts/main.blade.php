@@ -231,6 +231,31 @@
         @endif
         @stack('scripts')
         <script src="{{ asset('frontend/assets/js/custom.js') }}"></script>
+
+        @if(Session::has('order_placed'))
+        <script>
+            Swal.fire({
+                title: "Order Placed",
+                text: "{{ Session::get('order_placed') }}",
+                icon: "success",
+                timer: 5500,
+                showClass: {
+                    popup: `
+                        animate__animated
+                        animate__fadeInUp
+                        animate__faster
+                    `
+                },
+                hideClass: {
+                    popup: `
+                        animate__animated
+                        animate__fadeOutDown
+                        animate__faster
+                    `
+                }
+            });
+        </script>
+    @endif
     <script>
            $(document).ready(function () {
         // Initialize form validation

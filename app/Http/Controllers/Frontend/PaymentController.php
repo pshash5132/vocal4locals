@@ -58,6 +58,7 @@ class PaymentController extends Controller
         Session::forget('coupon');
         toastr('Your order has been placed');
         Mail::to(Auth::user()->email)->send(new OrderConfirmation($order));
+        Session::flash('order_placed', 'Your order is placed successfully. You will receive order details on your email.');
         return redirect()->route('home');
         if (!Session::has('address')) {
             return redirect()->route('user.checkout');

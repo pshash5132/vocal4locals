@@ -102,7 +102,7 @@
                                 <a href="{{route('user.checkout')}}" class="g-btn f-btn mb-0">Buy Now</a>
                             </div>
                             <div class="free-main-text">
-                                <p>Free delivery before 31st July 2023 <span class="star">*</span></p>
+                                <p>Delivery before<span class="b-text-category"> {{getFormattedShippingTimeAttribute($product->expected_delivery_days)}} <span class="star">*</span></span></p>
                                 {{-- <p>Category: <span class="b-text-category">{{$product->subCategory->category->name;}}</span> </p>
                                 <p>Sub Category: <span class="b-text-category">{{$product->subCategory->name}}</span> </p> --}}
                                 <p>Sold By: <span class="b-text-category">{{$product->brand->name}}</span> </p>

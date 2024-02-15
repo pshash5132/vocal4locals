@@ -90,13 +90,7 @@
                                             class="form-control">
                                     </div>
                                 </div> --}}
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label>Expected Delivery in days</label>
-                                        <input type="number" name="expected_delivery_days" min="0" value="{{ old('expected_delivery_days') }}"
-                                            class="form-control">
-                                    </div>
-                                </div>
+
                                 {{-- <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Offer-Price</label>
@@ -147,6 +141,32 @@
                                 </div>
 
 
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="inputState">Shipping time</label>
+                                        <select name="expected_delivery_days" id="expected_delivery_days"  class="form-control">
+                                            <option value="" selected disabled>Select shpping time</option>
+                                            <option value="2">2 Hours</option>
+                                            <option value="4">4 Hours</option>
+                                            <option value="6">6 Hours</option>
+                                            <option value="8">8 Hours</option>
+                                            <option value="12">12 Hours</option>
+                                            <option value="24">1 Day</option>
+                                            <option value="36">1.5 Days</option>
+                                            <option value="48">2 Days</option>
+                                            <option value="60">2.5 Days</option>
+                                            <option value="72">3 Days</option>
+                                            <option value="84">3.5 Days</option>
+                                            <option value="96">4 Days</option>
+                                            <option value="108">4.5 Days</option>
+                                            <option value="120">5 Days</option>
+                                            <option value="132">5.5 Days</option>
+                                            <option value="144">6 Days</option>
+                                            <option value="156">6.5 Days</option>
+                                            <option value="168">7 Days</option>
+                                        </select>
+                                    </div>
+                                </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="inputState">status</label>
