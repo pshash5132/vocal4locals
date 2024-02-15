@@ -444,13 +444,9 @@
                 },
                 postalcode: {
                     required: true,
-                    number: true,
-
                 },
                 contact: {
                     required: true,
-                    number: true,
-
                 }
             },
             messages: {
