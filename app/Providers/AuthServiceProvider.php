@@ -34,7 +34,7 @@ class AuthServiceProvider extends ServiceProvider
         });
 
         ResetPassword::toMailUsing(function (User $user, string $token) {
-            $url = env('APP_URL') . $token;
+            $url = env('APP_URL') .'reset-password'. $token;
             return (new MailMessage)
                 ->subject('Verify Email Address')
                 ->line('Click the button belowssss to verify your email address.')
