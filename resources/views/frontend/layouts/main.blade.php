@@ -445,11 +445,12 @@
                 postalcode: {
                     required: true,
                     digits: true,
+                    minlength: 6
                 },
                 contact: {
                     required: true,
                     digits: true,
-
+                    minlength: 10
                 }
             },
             messages: {
