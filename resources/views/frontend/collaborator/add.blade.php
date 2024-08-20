@@ -32,7 +32,7 @@
                                 <div class="col-lg-6">
                                     <div class="form-group">
                                         <label for="">Nature of business*</label>
-                                        <input type="text" name="nob" value="{{old('nob')}}" class="form-control" placeholder="Mark Ruffalo">
+                                        <input type="text" name="nob" value="{{old('nob')}}" class="form-control" placeholder="Grocery store">
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
