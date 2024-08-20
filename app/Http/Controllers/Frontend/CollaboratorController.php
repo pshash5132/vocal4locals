@@ -29,6 +29,7 @@ class CollaboratorController extends Controller
             'email' => ['required', 'string', 'max:200', 'unique:vendors,email', 'unique:users,email'],
             'mobile' => ['required', 'string', 'max:200', 'unique:vendors,phone'],
             'address' => ['required', 'string'],
+            'nob' => ['required', 'string'],
             'password' => ['required', 'string','min:8'],
         ]);
         $imagePath = $this->uploadImage($request, 'banner', 'uploads/vendor');
@@ -38,6 +39,7 @@ class CollaboratorController extends Controller
         $user->status = 'inactive';
         $user->role = 'vendor';
         $user->contact = $request->mobile;
+        $user->nob = $request->nob;
         $user->password = bcrypt($request->password);
         $user->image = $imagePath;
         $user->save();

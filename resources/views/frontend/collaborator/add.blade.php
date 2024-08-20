@@ -6,14 +6,14 @@
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb m-0">
                           <li class="breadcrumb-item"><a href="{{route('home')}}">Home</a></li>
-                          <li class="breadcrumb-item active" aria-current="page">Collaboator</li>
+                          <li class="breadcrumb-item active" aria-current="page">Collaborator </li>
                         </ol>
                     </nav>
                 </div>
 
                 <div class="col-lg-12">
                     <div class="common-form-section cmn-bg-tab services-inquiry-wrap">
-                        <h1>Collaboator Registration</h1>
+                        <h1>Collaborator Registration</h1>
                         <form  method="POST" enctype="multipart/form-data" action="{{ route('collaborator.add') }}" id="collaborator_registration">
                             @csrf
                             <div class="row">
@@ -27,6 +27,12 @@
                                     <div class="form-group">
                                         <label for="">Name*</label>
                                         <input type="text" name="name" value="{{old('name')}}" class="form-control" placeholder="Mark Ruffalo">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label for="">Nature of business*</label>
+                                        <input type="text" name="nob" value="{{old('nob')}}" class="form-control" placeholder="Mark Ruffalo">
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
@@ -80,6 +86,9 @@
                 name: {
                     required: true,
                 },
+                nob: {
+                    required: true,
+                },
                 email: {
                     required: true,
                     email: true,
@@ -103,14 +112,17 @@
                     extension: "Please upload a valid image file (png, jpg, jpeg, gif).",
                 },
                 name: {
-                    required: "Please enter your name.",
+                    required: "Please enter vendor name.",
+                },
+                nob: {
+                    required: "Please enter nature of business.",
                 },
                 email: {
-                    required: "Please enter your email address.",
+                    required: "Please enter email address.",
                     email: "Please enter a valid email address.",
                 },
                 mobile: {
-                    required: "Please enter your contact number.",
+                    required: "Please enter contact number.",
                     digits: "Please enter a valid numeric contact number.",
                     minlength: "Please enter at least 10 digits.",
                     maxlength: "Please enter no more than 10 digits.",
@@ -120,7 +132,7 @@
                     minlength: "Password must be at least {0} characters long.",
                 },
                 address: {
-                    required: "Please enter your address.",
+                    required: "Please enter full address.",
                 },
             },
         });
