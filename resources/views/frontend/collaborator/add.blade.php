@@ -13,7 +13,7 @@
 
                 <div class="col-lg-12">
                     <div class="common-form-section cmn-bg-tab services-inquiry-wrap">
-                        <h1>Collaborator Registration</h1>
+                        <h1>Free Registration</h1>
                         <form  method="POST" enctype="multipart/form-data" action="{{ route('collaborator.add') }}" id="collaborator_registration">
                             @csrf
                             <div class="row">
