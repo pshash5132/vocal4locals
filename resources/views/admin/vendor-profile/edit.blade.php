@@ -43,7 +43,10 @@
                                 <label>Phone</label>
                                 <input name="phone"  value="{{$data->phone}}" type="phone" class="form-control">
                             </div>
-
+                            <div class="form-group">
+                                <label>Nature of business</label>
+                                <input name="nob"  value="{{old('nob')}}" type="text" class="form-control">
+                            </div>
                             <div class="form-group">
                                 <label>Address</label>
                                 <textarea name="address" class="form-control">{{$data->address}}</textarea>

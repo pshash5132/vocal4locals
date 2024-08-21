@@ -51,6 +51,7 @@ class AdminVendorProfileController extends Controller
             'email' => ['required', 'string', 'max:200', 'unique:vendors,email'],
             'phone' => ['required', 'string', 'max:200', 'unique:vendors,phone'],
             'address' => ['required', 'string'],
+            'nob' => ['required', 'string'],
             'description' => ['required', 'string'],
             'fb_link' => ['nullable', 'string'],
             'tw_link' => ['nullable', 'string'],
@@ -71,6 +72,7 @@ class AdminVendorProfileController extends Controller
         $insert = new Vendor();
         $insert->banner = $imagePath;
         $insert->name = $request->name;
+        $insert->nob = $request->nob;
         $insert->email = $request->email;
         $insert->phone = $request->phone;
         $insert->address = $request->address;
@@ -114,6 +116,7 @@ class AdminVendorProfileController extends Controller
             'email' => ['required', 'string', 'max:200', 'unique:vendors,email,' . $id],
             'phone' => ['required', 'string', 'max:200', 'unique:vendors,phone,' . $id],
             'address' => ['required', 'string'],
+            'nob' => ['required', 'string'],
             'description' => ['required', 'string'],
             'fb_link' => ['nullable', 'string'],
             'tw_link' => ['nullable', 'string'],
@@ -131,6 +134,7 @@ class AdminVendorProfileController extends Controller
         $user->save();
         $update->banner = $imagePath;
         $update->name = $request->name;
+        $update->nob = $request->nob;
         $update->email = $request->email;
         $update->phone = $request->phone;
         $update->address = $request->address;
