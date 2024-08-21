@@ -86,7 +86,7 @@ class VendorDataTable extends DataTable
             ->title('Sr No.') // Title for the serial number column
             ->searchable(false) // Serial number column is not searchable
             ->orderable(false) // Serial number column is not orderable
-            ->width(50)
+            ->width(100)
             ->addClass('text-center'),
             Column::make('name'),
             Column::make('status'),
