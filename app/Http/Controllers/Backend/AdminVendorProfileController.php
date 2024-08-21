@@ -10,7 +10,7 @@ use App\Traits\ImageUploadTrait;
 use Illuminate\Http\Request;
 use Auth;
 use App\Mail\VenderRegisterConfirmation;
-
+use App\Models\Product;
 use Illuminate\Support\Facades\Mail;
 
 class AdminVendorProfileController extends Controller
@@ -150,10 +150,10 @@ class AdminVendorProfileController extends Controller
     public function destroy(string $id)
     {
         $vendor = Vendor::findOrFail($id);
-        // $subCategory = SubCategory::where('category_id', $category->id)->count();
-        // if ($subCategory > 0) {
-        //     return response(['status' => '0', 'message' => 'This item contain sub items']);
-        // }
+        $product = Product::where('vendor_id', $id)->count();
+        if ($product > 0) {
+            return response(['status' => '0', 'message' => 'This vendor have products, Please remove releted products.']);
+        }
         @$this->deleteImage($vendor->logo||"");
         $vendor->delete();
         return response(['status' => '1', 'message' => 'Deleted Successfully']);
