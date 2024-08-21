@@ -20,6 +20,7 @@ class VendorDataTable extends DataTable
     public function dataTable(QueryBuilder $query): EloquentDataTable
     {
         return (new EloquentDataTable($query))
+        ->addIndexColumn() // Automatically add a serial number column
         ->addColumn('status', function ($query) {
             if ($query->status == 1) {
                 return '<label class="custom-switch mt-2">
@@ -81,7 +82,12 @@ class VendorDataTable extends DataTable
     public function getColumns(): array
     {
         return [
-            Column::make('id'),
+            Column::computed('DT_RowIndex')
+            ->title('Sr No.') // Title for the serial number column
+            ->searchable(false) // Serial number column is not searchable
+            ->orderable(false) // Serial number column is not orderable
+            ->width(50)
+            ->addClass('text-center'),
             Column::make('name'),
             Column::make('status'),
             Column::computed('action')
