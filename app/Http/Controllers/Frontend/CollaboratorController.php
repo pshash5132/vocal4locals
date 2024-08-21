@@ -26,8 +26,8 @@ class CollaboratorController extends Controller
     {
         $request->validate([
             'banner' => ['image', 'max:2000'],
-            'email' => ['required', 'string', 'max:200', 'unique:vendors,email', 'unique:users,email'],
-            'mobile' => ['required', 'string', 'max:200', 'unique:vendors,phone'],
+            // 'email' => ['required', 'string', 'max:200', 'unique:vendors,email', 'unique:users,email'],
+            // 'mobile' => ['required', 'string', 'max:200', 'unique:vendors,phone'],
             'address' => ['required', 'string'],
             'nob' => ['required', 'string'],
             'password' => ['required', 'string','min:8'],
@@ -41,7 +41,7 @@ class CollaboratorController extends Controller
         $user->contact = $request->mobile;
         $user->password = bcrypt($request->password);
         $user->image = $imagePath;
-        $user->save();
+        // $user->save();
 
         $insert = new Vendor();
         $insert->banner = $imagePath;
@@ -56,7 +56,7 @@ class CollaboratorController extends Controller
         $insert->insta_link = $request->insta_link;
         $insert->status = '0';
         $insert->user_id = $user->id;
-        $insert->save();
+        // $insert->save();
         toastr('Vendor Created successfully', 'success');
         Mail::to($request->email)->send(new VenderRegister($request));
         return redirect()->route('home');
