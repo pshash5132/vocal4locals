@@ -39,7 +39,6 @@ class CollaboratorController extends Controller
         $user->status = 'inactive';
         $user->role = 'vendor';
         $user->contact = $request->mobile;
-        $user->nob = $request->nob;
         $user->password = bcrypt($request->password);
         $user->image = $imagePath;
         $user->save();
@@ -50,6 +49,7 @@ class CollaboratorController extends Controller
         $insert->email = $request->email;
         $insert->phone = $request->mobile;
         $insert->address = $request->address;
+        $insert->nob = $request->nob;
         $insert->description = $request->description;
         $insert->fb_link = $request->fb_link;
         $insert->tw_link = $request->tw_link;
