@@ -154,7 +154,7 @@ class AdminVendorProfileController extends Controller
         // if ($subCategory > 0) {
         //     return response(['status' => '0', 'message' => 'This item contain sub items']);
         // }
-        $this->deleteImage($vendor->logo);
+        @$this->deleteImage($vendor->logo);
         $vendor->delete();
         return response(['status' => '1', 'message' => 'Deleted Successfully']);
     }
