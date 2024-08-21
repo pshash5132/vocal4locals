@@ -46,14 +46,14 @@
                         <tfoot>
                             <tr style="display: flex; flex-direction: column; background: #374850; padding: 26px 0 15px; margin-top: 27px;">
                                 <td>
-                                    <div class="social-media-wrap" style="margin-bottom: 10px;">
+                                    {{-- <div class="social-media-wrap" style="margin-bottom: 10px;">
                                         <ul>
                                             <li><a href="#" style="width: 35px; height: 35px; padding: 7px;border-radius: 50%; background: #5264AE; margin: 0 7px;"><img style="width: 35px; height: 35px;" src="{{asset('frontend/assets')}}/images/instagram.png" alt="Insta" style="filter: brightness(0) invert(1); position: relative; "></a></li>
                                             <li><a href="#" style="width: 35px; height: 35px; padding: 7px;border-radius: 50%; background: #5264AE; margin: 0 7px;"><img style="width: 35px; height: 35px;" src="{{asset('frontend/assets')}}/images/facebook.png" alt="Facebook" style="filter: brightness(0) invert(1); position: relative; "></a></li>
                                             <li><a href="#" style="width: 35px; height: 35px; padding: 7px;border-radius: 50%; background: #5264AE; margin: 0 7px;"><img style="width: 35px; height: 35px;" src="{{asset('frontend/assets')}}/images/linkedin.png" alt="Twiter" style="filter: brightness(0) invert(1); position: relative; "></a></li>
                                             <li><a href="#" style="width: 35px; height: 35px; padding: 7px;border-radius: 50%; background: #5264AE; margin: 0 7px;"><img style="width: 35px; height: 35px;" src="{{asset('frontend/assets')}}/images/whatsapp.png" alt="Pintrest" style="filter: brightness(0) invert(1); position: relative; "></a></li>
                                         </ul>
-                                    </div>
+                                    </div> --}}
                                 </td>
                                 <td style="color: #FFFFFF; text-align: center; line-height: 30px; font-weight: 400; font-size: 10px;">© 2023 All Rights Reserved | Vocaal4local's</td>
                             </tr>
