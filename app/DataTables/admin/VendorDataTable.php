@@ -51,7 +51,7 @@ class VendorDataTable extends DataTable
      */
     public function query(Vendor $model): QueryBuilder
     {
-        return $model->newQuery();
+        return $model->newQuery()->orderBy('id', 'desc');
     }
 
     /**
@@ -64,7 +64,6 @@ class VendorDataTable extends DataTable
             ->columns($this->getColumns())
             ->minifiedAjax()
         //->dom('Bfrtip')
-            ->orderBy(1)
             ->selectStyleSingle()
             ->buttons([
                 Button::make('excel'),
