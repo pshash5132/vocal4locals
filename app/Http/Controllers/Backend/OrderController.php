@@ -85,6 +85,15 @@ class OrderController extends Controller
         Mail::to($order->user->email)->send(new OrderConfirmation($order));
         return response(['status'=>1,'message'=>'Order status updated']);
     }
+    public function delivered(Request $request)
+    {
+        $order = Order::findOrFail($request->id);
+        $order->order_status = 'delivered';
+        $order->save();
+
+        Mail::to($order->user->email)->send(new OrderConfirmation($order));
+        return response(['status'=>1,'message'=>'Order status updated']);
+    }
     public function changePaymentStatus(Request $request)
     {
         $order = Order::findOrFail($request->id);

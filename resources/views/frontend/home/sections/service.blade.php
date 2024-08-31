@@ -9,7 +9,8 @@
     </div>
     <div class="{{ count($services) > 5 ? 'owl-carousel owl-theme our-services-slider':'owl-carousel owl-theme our-services-slider' }}">
         <div class="item">
-            <a href="{{route('inquiry')}}">
+            <a href="https://www.rushabtours.com/">
+            {{-- <a href="{{route('inquiry')}}"> --}}
                 <div class="our-services-wrap text-center">
                     <div class="our-services-img">
                         <img src="{{asset('frontend')}}/assets/images/Travel.svg" alt="Travel" />
