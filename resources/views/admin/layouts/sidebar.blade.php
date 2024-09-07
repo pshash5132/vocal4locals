@@ -197,12 +197,15 @@
                         class="fas fa-columns"></i> <span>Manage Orders</span></a>
                 <ul class="dropdown-menu">
                     <li class="{{setActive([
-                        'admin.order.*',
+                        'admin.order.index',
                         ])}}"><a class="nav-link" href="{{route('admin.order.index')}}">All Orders</a>
                     </li>
-
-
-
+                </ul>
+                <ul class="dropdown-menu">
+                    <li class="{{setActive([
+                        'admin.order.monthlyorderreport',
+                        ])}}"><a class="nav-link" href="{{route('admin.order.monthlyorderreport')}}">Monthly Order Report</a>
+                    </li>
                 </ul>
             </li>
 

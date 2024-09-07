@@ -98,6 +98,7 @@ Route::get('order/delivered/{id}', [OrderController::class, 'delivered'])->name(
 Route::resource('order', OrderController::class);
 Route::get('order-status',[OrderController::class,'changeOrderStatus'])->name('order.status');
 Route::get('payment-status',[OrderController::class,'changePaymentStatus'])->name('order.paymentstatus');
+Route::get('monthly-order-report',[OrderController::class,'monthlyOrderReport'])->name('order.monthlyorderreport');
 
 Route::resource('terms-and-conditions', TermsAndConditionsController::class);
 Route::resource('privacy-policies', PrivacyPolicyController::class);

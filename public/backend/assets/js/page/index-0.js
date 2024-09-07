@@ -1,14 +1,14 @@
 "use strict";
 
 var statistics_chart = document.getElementById("myChart").getContext('2d');
-
+var thisWeek = JSON.parse(document.getElementById('thisWeek').value);
 var myChart = new Chart(statistics_chart, {
   type: 'line',
   data: {
     labels: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
     datasets: [{
       label: 'Statistics',
-      data: [640, 387, 530, 302, 430, 270, 488],
+      data: JSON.parse(document.getElementById('thisWeek').value),
       borderWidth: 5,
       borderColor: '#6777ef',
       backgroundColor: 'transparent',
@@ -28,7 +28,48 @@ var myChart = new Chart(statistics_chart, {
           drawBorder: false,
         },
         ticks: {
-          stepSize: 150
+          stepSize: 1000
+        }
+      }],
+      xAxes: [{
+        gridLines: {
+          color: '#fbfbfb',
+          lineWidth: 2
+        }
+      }]
+    },
+  }
+});
+
+var statistics_chart = document.getElementById("myChart2").getContext('2d');
+var monthlySales = JSON.parse(document.getElementById('monthlySales').value);
+var myChart = new Chart(statistics_chart, {
+  type: 'line',
+  data: {
+    labels: ["January","February","March","April","May","June","July","August","September","October","November","December"],
+    datasets: [{
+      label: 'Statistics',
+      data: JSON.parse(document.getElementById('monthlySales').value),
+      borderWidth: 5,
+      borderColor: '#6777ef',
+      backgroundColor: 'transparent',
+      pointBackgroundColor: '#fff',
+      pointBorderColor: '#6777ef',
+      pointRadius: 4
+    }]
+  },
+  options: {
+    legend: {
+      display: false
+    },
+    scales: {
+      yAxes: [{
+        gridLines: {
+          display: false,
+          drawBorder: false,
+        },
+        ticks: {
+          stepSize: 100
         }
       }],
       xAxes: [{

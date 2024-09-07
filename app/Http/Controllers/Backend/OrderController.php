@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Backend;
 
 use App\DataTables\admin\OrderDataTable;
+use App\DataTables\admin\MonthlyOrderDataTable;
 use App\Http\Controllers\Controller;
 use App\Mail\OrderConfirmation;
 use App\Models\Order;
@@ -20,7 +21,9 @@ class OrderController extends Controller
     {
         $folder = $this->folder;
         $page = $this->folder . '.index';
-        return $dataTable->render('admin.layouts.master', compact('page', 'folder'));
+        $from_date =  date("Y-m-01");
+        $to_date =  date("Y-m-t");
+        return $dataTable->render('admin.layouts.master', compact('page', 'folder','from_date','to_date'));
     }
 
     /**
@@ -101,4 +104,12 @@ class OrderController extends Controller
         $order->save();
         return response(['status'=>1,'message'=>'Payment status updated']);
     }
+
+    public function monthlyOrderReport(MonthlyOrderDataTable $dataTable){
+        $folder = $this->folder;
+        $page = $this->folder . '.index';
+        $from_date =  date("Y-m-01");
+        $to_date =  date("Y-m-t");
+        return $dataTable->render('admin.layouts.master', compact('page', 'folder','from_date','to_date'));
+    } 
 }
