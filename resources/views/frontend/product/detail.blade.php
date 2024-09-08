@@ -99,7 +99,7 @@
                             <input type="hidden" class="selectedVariant" value="{{$product->variants[0]->id}}">
                             <div class="text-center buttons-wrap submit-btn-wrap">
                                 <button type="submit" class="g-btn f-btn border-btn mb-0 addToCart" data-variantId="{{$product->variants[0]->id}}">Add To Cart</button>
-                                <a href="{{route('user.checkout')}}" class="g-btn f-btn mb-0">Buy Now</a>
+                                <a href="{{route('user.checkout')}}" class="g-btn f-btn mb-0 addToCart" data-variantId="{{$product->variants[0]->id}}">Buy Now</a>
                             </div>
                             <div class="free-main-text">
                                 <p>Delivery before<span class="b-text-category"> {{getFormattedShippingTimeAttribute($product->expected_delivery_days)}} <span class="star">*</span></span></p>
