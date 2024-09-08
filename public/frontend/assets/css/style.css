@@ -2842,6 +2842,11 @@ button:focus:not(:focus-visible) {
     padding: 0;
 }
 
+.billing-details-main > .billing-details-wrap > form {
+    max-height: 250px;
+    overflow: scroll;
+}
+
 .billing-details-wrap {
     padding: 24px 23px;
     border-radius: 10px;
@@ -2891,8 +2896,8 @@ button:focus:not(:focus-visible) {
     margin-top: 0;
 }
 .billing-details-wrap .main-dis {
-    flex-direction: column;
-    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 10px;
 }
 .main-dis-2 {
     flex-direction: column !important;
@@ -3560,9 +3565,9 @@ button:focus:not(:focus-visible) {
     width: 100%;
 }
 
-.billing-details-main.order-summary-wrap .main-dis input {
+/* .billing-details-main.order-summary-wrap .main-dis input {
     display: none;
-}
+} */
 
 .max-min-price-wrap {
     display: flex;
@@ -5126,6 +5131,9 @@ button:focus:not(:focus-visible) {
     .common-form-section .form-control {
         padding: 11px 13px;
         font-size: 14px;
+    }
+    .size-main-wrapper .select-size .button {
+        width: 100%;
     }
     .common-form-section .form-control::placeholder {
         font-size: 14px;
