@@ -32,7 +32,7 @@
                             </tr>
                             <tr>
                                 <td style="font-size: 16px; color: #374850; line-height: 30px; font-weight: 400; margin-top: 15px; display: block;">
-                                    {{$user->name}} has been successfully verified E-mail.
+                                    {{$user->name}} has been successfully verified {{ $user->email }} this e-mail.
                                 </td>
                             </tr>
                             <tr style="flex-direction: column; display: flex; margin-top: 30px;">
