@@ -77,18 +77,15 @@
                                                 <tr class="alert" role="alert">
                                                     <td>
                                                         <div class="main-dis">
-                                                            <input type="radio" name="shipping" class="shipping" value="{{$shipingMethod->id}}" data-val="{{$shipingMethod->cost}}"/>
-                                                            <label for="">
+                                                            <input type="radio" id="express" name="shipping" class="shipping" value="{{$shipingMethod->id}}" data-val="{{$shipingMethod->cost}}"/>
+                                                            <label for="express">
                                                                 <p class="light-text">{{$shipingMethod->name}} :</p>
                                                             </label>
                                                         </div>
                                                     </td>
                                                     <td>
                                                         <div class="main-dis main-dis-2">
-                                                            <input type="radio" name="" />
-                                                            <label for="">
-                                                                <p class="dark-text">₹{{$shipingMethod->cost}}</p>
-                                                            </label>
+                                                            <p class="dark-text">₹{{$shipingMethod->cost}}</p>
                                                         </div>
                                                     </td>
                                                 </tr>
@@ -96,8 +93,8 @@
                                                     <tr class="alert" role="alert">
                                                         <td>
                                                             <div class="main-dis">
-                                                                <input type="radio" name="shipping" class="shipping" value="{{$shipingMethod->id}}" data-val="{{$shipingMethod->cost}}"/>
-                                                                <label for="">
+                                                                <input type="radio" id="free-sup-express" name="shipping" class="shipping" value="{{$shipingMethod->id}}" data-val="{{$shipingMethod->cost}}"/>
+                                                                <label for="free-sup-express">
                                                                     <p class="light-text">{{$shipingMethod->name}} :</p>
                                                                 </label>
                                                             </div>

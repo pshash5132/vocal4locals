@@ -2916,7 +2916,7 @@ button:focus:not(:focus-visible) {
 }
 .billing-details-wrap .main-dis [type="radio"]:not(:checked) + label {
     position: relative;
-    padding-left: 38px;
+    padding-left: 30px;
     cursor: pointer;
     line-height: 20px;
     display: inline-block;
@@ -2954,6 +2954,18 @@ button:focus:not(:focus-visible) {
     opacity: 0;
     -webkit-transform: scale(0);
     transform: scale(0);
+}
+.billing-details-wrap .main-dis [type="radio"]:checked + label:after {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}
+.main-dis.main-dis-2 input {
+    display: none;
+}
+.main-dis.main-dis-2 label::after,
+.main-dis.main-dis-2 label::before {
+    display: none;
 }
 .main-dis-2 {
     flex-direction: column !important;
