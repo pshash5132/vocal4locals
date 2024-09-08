@@ -1674,6 +1674,12 @@ input[type=number] {
     background: #fff;
 }
 
+.billing-details-wrap .main-dis [type="radio"]:checked + label:after {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}
+
 .cmn-bg-tab .g-btn {
     max-width: 530px;
     margin: 0 auto;
@@ -2898,6 +2904,56 @@ button:focus:not(:focus-visible) {
 .billing-details-wrap .main-dis {
     justify-content: flex-start;
     gap: 10px;
+}
+.billing-details-wrap .main-dis label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.billing-details-wrap .main-dis [type="radio"]:not(:checked) {
+    position: absolute;
+    left: -9999px;
+}
+.billing-details-wrap .main-dis [type="radio"]:not(:checked) + label {
+    position: relative;
+    padding-left: 38px;
+    cursor: pointer;
+    line-height: 20px;
+    display: inline-block;
+}
+.billing-details-wrap .main-dis [type="radio"]:not(:checked) + label:before {
+    left: 10px;
+    top: 24px;
+}
+.billing-details-wrap .main-dis [type="radio"]:not(:checked) + label:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 18px;
+    border: 2px solid #ddd;
+    border-radius: 100%;
+    background: transparent;
+}
+.billing-details-wrap .main-dis [type="radio"]:not(:checked) + label:after {
+    content: '';
+    width: 10px;
+    height: 10px;
+    background: #A3A9BD;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%) !important;
+    left: 4px;
+    border-radius: 100%;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+.billing-details-wrap .main-dis [type="radio"]:not(:checked) + label:after {
+    opacity: 0;
+    -webkit-transform: scale(0);
+    transform: scale(0);
 }
 .main-dis-2 {
     flex-direction: column !important;

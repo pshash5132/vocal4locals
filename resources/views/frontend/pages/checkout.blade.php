@@ -78,22 +78,28 @@
                                                     <td>
                                                         <div class="main-dis">
                                                             <input type="radio" name="shipping" class="shipping" value="{{$shipingMethod->id}}" data-val="{{$shipingMethod->cost}}"/>
-                                                            <p class="light-text">{{$shipingMethod->name}} :</p>
+                                                            <label for="">
+                                                                <p class="light-text">{{$shipingMethod->name}} :</p>
+                                                            </label>
                                                         </div>
                                                     </td>
                                                     <td>
                                                         <div class="main-dis main-dis-2">
-                                                            <p class="dark-text">₹{{$shipingMethod->cost}}</p>
+                                                            <input type="radio" name="" />
+                                                            <label for="">
+                                                                <p class="dark-text">₹{{$shipingMethod->cost}}</p>
+                                                            </label>
                                                         </div>
                                                     </td>
                                                 </tr>
                                                 @elseif ($shipingMethod->type=== 'flat_cost')
                                                     <tr class="alert" role="alert">
-
                                                         <td>
                                                             <div class="main-dis">
                                                                 <input type="radio" name="shipping" class="shipping" value="{{$shipingMethod->id}}" data-val="{{$shipingMethod->cost}}"/>
-                                                                <p class="light-text">{{$shipingMethod->name}} :</p>
+                                                                <label for="">
+                                                                    <p class="light-text">{{$shipingMethod->name}} :</p>
+                                                                </label>
                                                             </div>
                                                         </td>
                                                         <td>
