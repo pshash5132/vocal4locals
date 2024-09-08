@@ -39,6 +39,14 @@
                     </div>
                 </div>
                 <div class="col-lg-12">
+                    @if (Route::has('password.request'))
+                        <div class="">
+                           By continuing, I agree to the <a href="{{route('terms-and-conditions')}}">Terms & Conditions</a> & <a href="{{route('privacy-policy')}}">Privacy Policy</a>
+                        </div>
+                        
+                    @endif
+                </div>
+                <div class="col-lg-12">
                     <button type="submit" class="f-btn">Sign Up</button>
                 </div>
                 <div class="col-lg-12">

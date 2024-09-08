@@ -94,7 +94,7 @@
                                 <div class="col-lg-12">
                                     <div class="form-group">
                                         <label for="">Contact Number*</label>
-                                        <input type="number" name="number" value="{{old('number')}}" class="form-control" placeholder="98980 98009" pattern="/^-?\d+\.?\d*$/" onkeypress="if(this.value.length==10) return false;">
+                                        <input type="number" name="number" value="{{old('number')}}" class="form-control" placeholder="98980 98009" >
                                     </div>
                                 </div>
                                 <div class="col-lg-12">
@@ -168,8 +168,8 @@
                             <div class="col-lg-6">
                                 <div class="form-group">
                                     <label for="">Contact Number*</label>
-                                    <input type="number" class="form-control" name="contact" id="contact" placeholder="98980 98009" pattern="/^-?\d+\.?\d*$/"
-                                        onKeyPress="if(this.value.length==10) return false;" />
+                                    <input type="number" class="form-control" name="contact" id="contact" placeholder="98980 98009"
+                                        />
                                 </div>
                             </div>
                         </div>
