@@ -9,7 +9,7 @@
     </div>
     <div class="{{ count($services) > 5 ? 'owl-carousel owl-theme our-services-slider':'owl-carousel owl-theme our-services-slider' }}">
         <div class="item">
-            <a href="https://rushabtours.com/">
+            <a href="https://travel.vocal4locals.com/">
             {{-- <a href="{{route('inquiry')}}"> --}}
                 <div class="our-services-wrap text-center">
                     <div class="our-services-img">
