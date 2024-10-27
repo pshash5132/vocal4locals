@@ -87,8 +87,8 @@
                                 <div class="select-size">
                                     <?php $i = 0; ?>
                                     @foreach ($product->variants as $variant)
-                                    <div class="button">
-                                        <input type="radio" {{$i==0 ? "checked":""}} data-id="{{$variant->id}}" class="variantBTN" name="variantItem">
+                                    <div class="button variantBTN" data-id="{{$variant->id}}">
+                                        <input type="radio" {{$i==0 ? "checked":""}} data-id="{{$variant->id}}" class="" name="variantItem">
                                         <label class="btn btn-default" for="XXS">{{$variant->name}}</label>
                                     </div>
                                     <?php $i++; ?>
