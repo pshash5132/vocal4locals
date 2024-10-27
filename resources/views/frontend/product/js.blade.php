@@ -1,6 +1,6 @@
 <script>
     var variants = {!!json_encode($product->variants->toArray())!!};
-    $(".variantBTN").click(function(){
+    $(document).on("click",".variantBTN",function(){
 alert(0);
         var variantId = $(this).data('id');
         var variant = variants.find(function (variant) {
