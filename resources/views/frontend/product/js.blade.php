@@ -34,5 +34,5 @@ document.querySelectorAll('.variantBTN').forEach((element) => {
         event.target.checked = true;
     });
 });
-
+alert("working")
 </script>
