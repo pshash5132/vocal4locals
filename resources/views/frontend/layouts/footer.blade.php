@@ -8,15 +8,15 @@
                     <ul>
                         <li>
                             <p>Phone</p>
-                            <a href="tel:{{$company->mobile}}">{{$company->mobile}}</a>
+                            <a href="tel:{{@$company->mobile}}">{{@$company->mobile}}</a>
                         </li>
                         <li>
                             <p>Website</p>
-                            <a href="mailto:{{$company->website}}">{{$company->website}}</a>
+                            <a href="mailto:{{@$company->website}}">{{@$company->website}}</a>
                         </li>
                         <li>
                             <p>Email</p>
-                            <a href="mailto:{{$company->email}}">{{$company->email}}</a>
+                            <a href="mailto:{{@$company->email}}">{{@$company->email}}</a>
                         </li>
                     </ul>
                 </div>
@@ -27,17 +27,17 @@
                         <img src="{{ asset('frontend') }}/assets/images/footer-logo.svg" alt="Logo" />
                     </a>
                     <p>
-                        {{$company->footer_tag}}
+                        {{@$company->footer_tag}}
                     </p>
                     <div class="social-media-wrap">
                         <ul>
-                            <li><a href="{{$company->instagram}}"><img src="{{ asset('frontend') }}/assets/images/Insta.svg"
+                            <li><a href="{{@$company->instagram}}"><img src="{{ asset('frontend') }}/assets/images/Insta.svg"
                                         alt="Insta" /></a></li>
-                            <li><a href="{{$company->facebook}}"><img src="{{ asset('frontend') }}/assets/images/fb.svg"
+                            <li><a href="{{@$company->facebook}}"><img src="{{ asset('frontend') }}/assets/images/fb.svg"
                                         alt="Facebook" /></a></li>
-                            <li><a href="{{$company->twitter}}"><img src="{{ asset('frontend') }}/assets/images/linkedin.svg"
+                            <li><a href="{{@$company->twitter}}"><img src="{{ asset('frontend') }}/assets/images/linkedin.svg"
                                         alt="Twiter" /></a></li>
-                            <li><a href="{{$company->whatsapp}}"><img src="{{ asset('frontend') }}/assets/images/whatsapp.svg"
+                            <li><a href="{{@$company->whatsapp}}"><img src="{{ asset('frontend') }}/assets/images/whatsapp.svg"
                                         alt="whatsapp" /></a></li>
                         </ul>
                     </div>
