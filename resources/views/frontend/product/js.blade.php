@@ -30,6 +30,7 @@ alert(0);
 
 document.querySelectorAll('.variantBTN').forEach((element) => {
     element.addEventListener('click', (event) => {
+        alert(1);
         event.target.checked = true;
     });
 });
