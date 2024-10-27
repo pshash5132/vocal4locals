@@ -28,5 +28,10 @@ alert(0);
         // })
     })
 
+document.querySelectorAll('.variantBTN').forEach((element) => {
+    element.addEventListener('click', (event) => {
+        event.target.checked = true;
+    });
+});
 
 </script>
