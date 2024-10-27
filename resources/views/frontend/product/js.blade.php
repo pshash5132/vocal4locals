@@ -1,6 +1,7 @@
 <script>
     var variants = {!!json_encode($product->variants->toArray())!!};
-    $(document).on("click",".variantBTN",function(){
+    document.querySelectorAll('.variantBTN').forEach((button) => {
+        button.addEventListener('click', () => {
 alert(0);
 
         document.querySelectorAll('input[name="variantItem"]').forEach((radio) => {
@@ -37,6 +38,7 @@ alert(0);
         //         }
         //     }
         // })
-    })
+    });
+});
 
 </script>
