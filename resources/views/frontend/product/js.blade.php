@@ -2,6 +2,17 @@
     var variants = {!!json_encode($product->variants->toArray())!!};
     $(document).on("click",".variantBTN",function(){
 alert(0);
+
+        document.querySelectorAll('input[name="variantItem"]').forEach((radio) => {
+            radio.checked = false;
+        });
+
+        // Check the radio button inside the clicked div
+        const radio = button.querySelector('input[type="radio"]');
+        if (radio) {
+            radio.checked = true;
+        }
+
         var variantId = $(this).data('id');
         var variant = variants.find(function (variant) {
             return variant.id === variantId;
@@ -28,11 +39,4 @@ alert(0);
         // })
     })
 
-document.querySelectorAll('.variantBTN').forEach((element) => {
-    element.addEventListener('click', (event) => {
-        alert(1);
-        event.target.checked = true;
-    });
-});
-alert("working")
 </script>
