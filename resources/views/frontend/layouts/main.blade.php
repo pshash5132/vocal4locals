@@ -57,11 +57,11 @@
                             </li>
                             <li>
                                 <img src="{{ asset('frontend') }}/assets/images/email.svg" alt="Email" />
-                                <a href="mailto:{{$company->email}}">{{$company->email}}</a>
+                                <a href="mailto:{{@$company->email}}">{{@$company->email}}</a>
                             </li>
                             <li>
                                 <img src="{{ asset('frontend') }}/assets/images/internet.svg" alt="Internet" />
-                                <a href="">{{$company->website}}</a>
+                                <a href="">{{@$company->website}}</a>
                             </li>
                         </ul>
                     </div>
