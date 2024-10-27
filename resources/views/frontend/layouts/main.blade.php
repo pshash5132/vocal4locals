@@ -53,7 +53,7 @@
                         <ul>
                             <li>
                                 <img src="{{ asset('frontend') }}/assets/images/call.svg" alt="Call" />
-                                <a href="tel:{{$company->mobile}}">{{$company->mobile}}</a>
+                                <a href="tel:{{@$company->mobile}}">{{@$company->mobile}}</a>
                             </li>
                             <li>
                                 <img src="{{ asset('frontend') }}/assets/images/email.svg" alt="Email" />
