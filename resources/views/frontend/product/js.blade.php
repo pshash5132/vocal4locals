@@ -1,7 +1,7 @@
 <script>
     var variants = {!!json_encode($product->variants->toArray())!!};
     $(".variantBTN").click(function(){
-
+alert(0);
         var variantId = $(this).data('id');
         var variant = variants.find(function (variant) {
             return variant.id === variantId;
